@@ -115,3 +115,84 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Seasonal product data
+const seasonalProducts = {
+    spring: [
+        { name: 'Sallad', icon: 'fa-leaf', status: 'Tillgänglig' },
+        { name: 'Spenat', icon: 'fa-leaf', status: 'Tillgänglig' },
+        { name: 'Ärtor', icon: 'fa-circle', status: 'Kommer snart' },
+        { name: 'Jordgubbar', icon: 'fa-strawberry', status: 'Kommer snart' }
+    ],
+    summer: [
+        { name: 'Tomater', icon: 'fa-apple-alt', status: 'Tillgänglig' },
+        { name: 'Majs', icon: 'fa-corn', status: 'Tillgänglig' },
+        { name: 'Bär', icon: 'fa-seedling', status: 'Tillgänglig' },
+        { name: 'Örter', icon: 'fa-leaf', status: 'Tillgänglig' }
+    ],
+    autumn: [
+        { name: 'Pumpor', icon: 'fa-circle', status: 'Tillgänglig' },
+        { name: 'Äpplen', icon: 'fa-apple-alt', status: 'Tillgänglig' },
+        { name: 'Squash', icon: 'fa-pepper-hot', status: 'Tillgänglig' },
+        { name: 'Rotfrukter', icon: 'fa-carrot', status: 'Tillgänglig' }
+    ],
+    winter: [
+        { name: 'Hö', icon: 'fa-wheat', status: 'Tillgänglig' },
+        { name: 'Lammkött', icon: 'fa-drumstick-bite', status: 'Tillgänglig' },
+        { name: 'Konserver', icon: 'fa-jar', status: 'Tillgänglig' },
+        { name: 'Ullprodukter', icon: 'fa-mitten', status: 'Tillgänglig' }
+    ]
+};
+
+// Season tabs functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const seasonTabs = document.querySelectorAll('.season-tab');
+    const seasonContent = document.getElementById('seasonContent');
+    
+    if (seasonTabs.length > 0 && seasonContent) {
+        // Function to display seasonal products
+        function showSeason(season) {
+            const products = seasonalProducts[season];
+            seasonContent.innerHTML = '';
+            
+            products.forEach((product, index) => {
+                const item = document.createElement('div');
+                item.className = 'season-item';
+                item.style.animationDelay = `${index * 0.1}s`;
+                
+                item.innerHTML = `
+                    <i class="fas ${product.icon}"></i>
+                    <h4>${product.name}</h4>
+                    <p class="season-status ${product.status === 'Tillgänglig' ? 'available' : 'soon'}">${product.status}</p>
+                `;
+                
+                item.addEventListener('click', () => {
+                    alert(`Klicka här för att beställa ${product.name}!`);
+                });
+                
+                seasonContent.appendChild(item);
+            });
+        }
+        
+        // Add click handlers to tabs
+        seasonTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                seasonTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                showSeason(tab.dataset.season);
+            });
+        });
+        
+        // Show spring by default
+        showSeason('spring');
+    }
+    
+    // Animate blog cards on scroll
+    const blogCards = document.querySelectorAll('.blog-card');
+    blogCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
