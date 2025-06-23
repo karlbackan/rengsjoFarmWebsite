@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rengsjö Farm - Gårdsprodukter direkt från producenten</title>
+    <meta name="description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="#home">Rengsjö Farm</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Hem</a></li>
+                <li><a href="#products">Produkter</a></li>
+                <li><a href="#about">Om oss</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Välkommen till <span class="highlight">Rengsjö Farm</span>
+                    </h1>
+                    <p class="hero-description">
+                        Familjeägd gård sedan 1985. Vi erbjuder färska gårdsprodukter av högsta kvalitet. 
+                        Vårt hållbara jordbruk säkerställer bästa möjliga produkter samtidigt som vi värnar om naturen.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">Våra produkter</a>
+                        <a href="#about" class="btn btn-secondary">Läs mer om oss</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop" 
+                         alt="Vacker gårdsvy med gröna fält" 
+                         loading="eager"
+                         width="800" 
+                         height="600">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Våra produkter</h2>
+                <p class="section-subtitle">Kvalitetsprodukter direkt från gården till dig.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" 
+                             alt="Hö" 
+                             loading="lazy"
+                             width="600" 
+                             height="400">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-price">Från 50 kr/bal</span>
+                        <h3>Hö</h3>
+                        <p>Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur.</p>
+                        <ul class="product-features">
+                            <li>Soltorkat för optimal näring</li>
+                            <li>Skördat vid perfekt mognad</li>
+                            <li>Låg fukthalt</li>
+                            <li>Finns i små och stora balar</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Beställ nu</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1619221882157-f58667065a12?w=600&h=400&fit=crop" 
+                             alt="Lammkött" 
+                             loading="lazy"
+                             width="600" 
+                             height="400">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-price">Från 120 kr/kg</span>
+                        <h3>Lammkött</h3>
+                        <p>Mört och smakrikt kött från våra naturbetande lamm.</p>
+                        <ul class="product-features">
+                            <li>100% naturbete</li>
+                            <li>Inga antibiotika eller hormoner</li>
+                            <li>Olika styckningsdelar</li>
+                            <li>Anpassad styckning möjlig</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Beställ nu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Om Rengsjö Farm</h2>
+                    <h3 class="about-subtitle">En familjetradition sedan 1985</h3>
+                    <p class="about-description">
+                        Vår gård har varit i familjen i flera generationer. Vi tror på hållbart jordbruk och att 
+                        producera mat av högsta kvalitet samtidigt som vi tar hand om jorden för framtida generationer.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-card">
+                            <div class="feature-icon">🌱</div>
+                            <h4>Hållbart jordbruk</h4>
+                            <p>Vi använder naturliga metoder och undviker kemiska bekämpningsmedel för att bevara jordens naturliga balans.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🐑</div>
+                            <h4>Djurvälfärd</h4>
+                            <p>Våra djur får beta fritt på naturliga ängar och behandlas med respekt och omsorg.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📍</div>
+                            <h4>Lokal produktion</h4>
+                            <p>Alla våra produkter produceras här på gården, vilket garanterar färskhet och kvalitet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&h=600&fit=crop" 
+                         alt="Familjen på Rengsjö Farm" 
+                         loading="lazy"
+                         width="800" 
+                         height="600">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kontakta oss</h2>
+                <p class="section-subtitle">Vi svarar gärna på dina frågor om våra produkter och leveranser.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Kontaktinformation</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <strong>Adress:</strong><br>
+                            Rengsjö Farm<br>
+                            Gårdsvägen 123<br>
+                            820 40 Rengsjö
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <strong>Telefon:</strong><br>
+                            <a href="tel:+46701234567">070-123 45 67</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <strong>E-post:</strong><br>
+                            <a href="mailto:info@rengsjofarm.se">info@rengsjofarm.se</a>
+                        </div>
+                    </div>
+                    
+                    <div class="hours">
+                        <h3>Öppettider</h3>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Måndag - Fredag:</td>
+                                <td>08:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td>Lördag:</td>
+                                <td>09:00 - 14:00</td>
+                            </tr>
+                            <tr>
+                                <td>Söndag:</td>
+                                <td>Stängt</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Namn</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Meddelande</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Skicka meddelande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Rengsjö Farm</h3>
+                    <p>Kvalitet från jord till bord sedan 1985</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Snabblänkar</h4>
+                    <ul>
+                        <li><a href="#home">Hem</a></li>
+                        <li><a href="#products">Produkter</a></li>
+                        <li><a href="#about">Om oss</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Följ oss</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rengsjö Farm. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
