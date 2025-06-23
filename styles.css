@@ -1,5 +1,6 @@
-/* Root Variables */
+/* Root Variables with Dark Mode Support */
 :root {
+    /* Color Palette - Light Mode */
     --farm-green: #2d5016;
     --farm-brown: #8b4513;
     --farm-yellow: #f4a460;
@@ -7,8 +8,97 @@
     --text-dark: #1a1a1a;
     --text-light: #666;
     --white: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #faf6f2;
     --shadow: 0 2px 10px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
+    
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    
+    /* Typography Scale */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 2rem;
+    --font-4xl: 3rem;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --farm-green: #4a7c2b;
+    --farm-brown: #a65d2f;
+    --farm-yellow: #f5b876;
+    --farm-cream: #2a2a2a;
+    --text-dark: #f0f0f0;
+    --text-light: #b0b0b0;
+    --white: #1a1a1a;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+    --space-3xl: 4rem;
+    
+    /* Typography Scale */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+    --font-4xl: 2.25rem;
+    --font-5xl: 3rem;
+    
+    /* Container Sizes */
+    --container-xs: 20rem;
+    --container-sm: 40rem;
+    --container-md: 48rem;
+    --container-lg: 64rem;
+    --container-xl: 80rem;
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --farm-green: #4a7c2a;
+        --farm-brown: #b5651d;
+        --farm-yellow: #f5b876;
+        --farm-cream: #1a1a1a;
+        --text-dark: #f0f0f0;
+        --text-light: #b0b0b0;
+        --white: #242424;
+        --shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+}
+
+/* Explicit Dark Mode Toggle */
+[data-theme="dark"] {
+    --farm-green: #4a7c2a;
+    --farm-brown: #b5651d;
+    --farm-yellow: #f5b876;
+    --farm-cream: #1a1a1a;
+    --text-dark: #f0f0f0;
+    --text-light: #b0b0b0;
+    --white: #242424;
+    --shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* Reset & Base Styles */
@@ -30,27 +120,31 @@ body {
     overflow-x: hidden;
 }
 
-/* Container */
+/* Container with Container Queries */
 .container {
-    max-width: 1200px;
+    max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--space-lg);
+    container-type: inline-size;
+    container-name: main-container;
 }
 
-/* Typography */
+/* Typography with Better Fluid Scaling */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
+    text-wrap: balance;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+h1 { font-size: clamp(var(--font-2xl), 5vw, var(--font-5xl)); }
+h2 { font-size: clamp(var(--font-xl), 4vw, var(--font-4xl)); }
+h3 { font-size: clamp(var(--font-lg), 3vw, var(--font-2xl)); }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
     color: var(--text-light);
+    text-wrap: pretty;
 }
 
 a {
@@ -59,17 +153,41 @@ a {
     transition: var(--transition);
 }
 
-/* Buttons */
+/* Focus Visible for Better Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--farm-green);
+    outline-offset: 2px;
+}
+
+/* Buttons with Better Accessibility */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: var(--space-sm) var(--space-lg);
     font-weight: 500;
     text-align: center;
     border-radius: 6px;
     transition: var(--transition);
     cursor: pointer;
     border: none;
-    font-size: 16px;
+    font-size: var(--font-base);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 .btn-primary {
@@ -107,10 +225,9 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    max-width: 1200px;
+    max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 1rem 20px;
+    padding: var(--space-md) var(--space-lg);
 }
 
 .logo a {
@@ -166,11 +283,28 @@ a {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0;
+    padding: var(--space-3xl) 0;
     background-color: var(--white);
     min-height: 80vh;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+/* Scroll-driven Animation for Hero */
+@supports (animation-timeline: scroll()) {
+    .hero-content {
+        animation: hero-parallax linear;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+    }
+    
+    @keyframes hero-parallax {
+        to {
+            transform: translateY(-20px);
+            opacity: 0.8;
+        }
+    }
 }
 
 .hero-content {
@@ -190,13 +324,13 @@ a {
 }
 
 .hero-description {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: var(--space-md);
     flex-wrap: wrap;
 }
 
@@ -210,7 +344,7 @@ a {
 /* Sections */
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: var(--space-2xl);
 }
 
 .section-title {
@@ -225,7 +359,7 @@ a {
 
 /* Products Section */
 .products {
-    padding: 80px 0;
+    padding: var(--space-3xl) 0;
     background-color: var(--farm-cream);
 }
 
@@ -680,8 +814,9 @@ a {
 }
 
 .blog-content p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-md);
     color: var(--text-light);
+    text-wrap: pretty;
 }
 
 .read-more {
@@ -727,4 +862,277 @@ a {
         grid-template-columns: 1fr;
     }
 }
-EOF < /dev/null
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--farm-green);
+    color: var(--white);
+    padding: var(--space-sm) var(--space-md);
+    z-index: 200;
+    text-decoration: none;
+    border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Container Queries for Product Cards */
+@container main-container (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container main-container (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Modern Scroll Progress Indicator */
+@supports (animation-timeline: scroll()) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, var(--farm-green) 0%, var(--farm-yellow) 100%);
+        transform-origin: 0 50%;
+        animation: scroll-progress linear;
+        animation-timeline: scroll();
+        z-index: 101;
+    }
+    
+    @keyframes scroll-progress {
+        to {
+            transform: scaleX(1);
+        }
+    }
+    
+    body::before {
+        transform: scaleX(0);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .footer,
+    .mobile-menu-toggle,
+    .btn,
+    form {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --farm-green: #1a3a0a;
+        --farm-brown: #6b3410;
+        --text-light: #333;
+        --shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Container Queries for Component-based Responsive Design */
+@container (max-width: 400px) {
+    .product-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-info {
+        padding: var(--space-md);
+    }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+    to {
+        left: 100%;
+    }
+}
+
+/* Image Loading States */
+img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    transition: var(--transition);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Focus Visible Improvements */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 3px solid var(--farm-green);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Status Indicators for Seasonal Products */
+.season-status {
+    font-size: var(--font-sm);
+    font-weight: 500;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: var(--space-xs);
+}
+
+.season-status.available {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.season-status.soon {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Performance: GPU Acceleration for Animations */
+.hero-content,
+.product-card,
+.season-item,
+.blog-card {
+    will-change: transform, opacity;
+}
+
+/* Remove will-change after animation */
+.animate-in {
+    will-change: auto;
+}
+
+/* Modern CSS Grid with Subgrid Support */
+@supports (grid-template-rows: subgrid) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+    
+    .product-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+    }
+}
+
+/* Aspect Ratio for Images */
+.product-image,
+.blog-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.product-image img,
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modern Form Styling */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Form validation states */
+input:valid,
+textarea:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/* Custom Scrollbar for Better UX */
+@supports (scrollbar-width: thin) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--farm-green) var(--farm-cream);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--farm-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--farm-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--farm-brown);
+}

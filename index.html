@@ -6,27 +6,171 @@
     <title>Rengsjö Farm - Gårdsprodukter direkt från producenten</title>
     <meta name="description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
     
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rengsjö Farm - Gårdsprodukter direkt från producenten">
+    <meta property="og:description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rengsjöfarm.se">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2d5016">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Rengsjö Farm - Gårdsprodukter direkt från producenten">
+    <meta property="og:description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rengsjofarm.se">
+    <meta property="og:image" content="https://rengsjofarm.se/images/farm-hero.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rengsjö Farm">
+    <meta name="twitter:description" content="Familjeägd gård i Rengsjö med färska gårdsprodukter">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#2d5016">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rengsjofarm.se">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="script.js" as="script">
-    
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Rengsjö Farm",
+      "description": "Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.",
+      "image": "https://rengsjofarm.se/images/farm-hero.jpg",
+      "@id": "https://rengsjofarm.se",
+      "url": "https://rengsjofarm.se",
+      "telephone": "+46701234567",
+      "email": "info@rengsjofarm.se",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gårdsvägen 123",
+        "addressLocality": "Rengsjö",
+        "postalCode": "820 40",
+        "addressCountry": "SE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 61.3000,
+        "longitude": 16.6833
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "priceRange": "$$",
+      "servesCuisine": "Farm Products",
+      "hasMap": "https://maps.google.com/?q=Rengsjö+Farm",
+      "sameAs": [
+        "https://facebook.com/rengsjofarm",
+        "https://instagram.com/rengsjofarm"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rengsjö Farm",
+        "description": "Familjeägd gård i Rengsjö som erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.",
+        "url": "https://rengsjöfarm.se",
+        "telephone": "+46701234567",
+        "email": "info@rengsjofarm.se",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Gårdsvägen 123",
+            "addressLocality": "Rengsjö",
+            "postalCode": "820 40",
+            "addressCountry": "SE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 61.5,
+            "longitude": 16.5
+        },
+        "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+        }, {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "14:00"
+        }],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Gårdsprodukter",
+            "itemListElement": [{
+                "@type": "Product",
+                "name": "Hö",
+                "description": "Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur."
+            }, {
+                "@type": "Product",
+                "name": "Lammkött",
+                "description": "Mört och smakrikt kött från våra naturbetande lamm."
+            }]
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
     <!-- Navigation -->
-    <header class="header">
-        <nav class="nav-container">
+    <header class="header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Huvudnavigation">
             <div class="logo">
                 <a href="#home">
                     <i class="fas fa-seedling"></i>
                     Rengsjö Farm
                 </a>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -42,12 +186,14 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
+    <main id="main" role="main">
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-labelledby="hero-title">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
+                    <h1 id="hero-title" class="hero-title">
                         Välkommen till <span class="highlight">Rengsjö Farm</span>
                     </h1>
                     <p class="hero-description">
@@ -60,37 +206,55 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop" 
-                         alt="Vacker gårdsvy med gröna fält" 
-                         loading="eager"
-                         width="800" 
-                         height="600">
+                    <picture>
+                        <source type="image/avif" srcset="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop&fm=avif 800w,
+                                                          https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop&fm=avif 400w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                        <source type="image/webp" srcset="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop&fm=webp 800w,
+                                                          https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop&fm=webp 400w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&h=600&fit=crop" 
+                             alt="Vacker gårdsvy med gröna fält vid Rengsjö Farm" 
+                             loading="eager"
+                             fetchpriority="high"
+                             width="800" 
+                             height="600">
+                    </picture>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
+    <section id="products" class="products" aria-labelledby="products-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Våra produkter</h2>
+                <h2 id="products-title" class="section-title">Våra produkter</h2>
                 <p class="section-subtitle">Kvalitetsprodukter direkt från gården till dig.</p>
             </div>
             
             <div class="product-grid">
-                <div class="product-card">
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" 
-                             alt="Hö" 
-                             loading="lazy"
-                             width="600" 
-                             height="400">
+                        <picture>
+                            <source type="image/avif" srcset="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop&fm=avif">
+                            <source type="image/webp" srcset="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop&fm=webp">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" 
+                                 alt="Högkvalitativt soltorkat hö för djur" 
+                                 loading="lazy"
+                                 width="600" 
+                                 height="400"
+                                 itemprop="image">
+                        </picture>
                     </div>
                     <div class="product-info">
-                        <span class="product-price">Från 50 kr/bal</span>
-                        <h3>Hö</h3>
-                        <p>Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur.</p>
+                        <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span itemprop="price">Från 50</span>
+                            <meta itemprop="priceCurrency" content="SEK">
+                            kr/bal
+                        </span>
+                        <h3 itemprop="name">Hö</h3>
+                        <p itemprop="description">Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur.</p>
                         <ul class="product-features">
                             <li>Soltorkat för optimal näring</li>
                             <li>Skördat vid perfekt mognad</li>
@@ -99,20 +263,29 @@
                         </ul>
                         <a href="#contact" class="btn btn-primary">Beställ nu</a>
                     </div>
-                </div>
+                </article>
                 
-                <div class="product-card">
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1619221882157-f58667065a12?w=600&h=400&fit=crop" 
-                             alt="Lammkött" 
-                             loading="lazy"
-                             width="600" 
-                             height="400">
+                        <picture>
+                            <source type="image/avif" srcset="https://images.unsplash.com/photo-1619221882157-f58667065a12?w=600&h=400&fit=crop&fm=avif">
+                            <source type="image/webp" srcset="https://images.unsplash.com/photo-1619221882157-f58667065a12?w=600&h=400&fit=crop&fm=webp">
+                            <img src="https://images.unsplash.com/photo-1619221882157-f58667065a12?w=600&h=400&fit=crop" 
+                                 alt="Mört lammkött från naturbetande lamm" 
+                                 loading="lazy"
+                                 width="600" 
+                                 height="400"
+                                 itemprop="image">
+                        </picture>
                     </div>
                     <div class="product-info">
-                        <span class="product-price">Från 120 kr/kg</span>
-                        <h3>Lammkött</h3>
-                        <p>Mört och smakrikt kött från våra naturbetande lamm.</p>
+                        <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span itemprop="price">Från 120</span>
+                            <meta itemprop="priceCurrency" content="SEK">
+                            kr/kg
+                        </span>
+                        <h3 itemprop="name">Lammkött</h3>
+                        <p itemprop="description">Mört och smakrikt kött från våra naturbetande lamm.</p>
                         <ul class="product-features">
                             <li>100% naturbete</li>
                             <li>Inga antibiotika eller hormoner</li>
@@ -121,16 +294,16 @@
                         </ul>
                         <a href="#contact" class="btn btn-primary">Beställ nu</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Seasonal Availability Section -->
-    <section id="season" class="season-section">
+    <section id="season" class="season-section" aria-labelledby="season-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Säsongens Produkter</h2>
+                <h2 id="season-title" class="section-title">Säsongens Produkter</h2>
                 <p class="section-subtitle">Klicka på en säsong för att se vad som finns tillgängligt</p>
             </div>
             
@@ -156,11 +329,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">Om Rengsjö Farm</h2>
+                    <h2 id="about-title" class="section-title">Om Rengsjö Farm</h2>
                     <h3 class="about-subtitle">En familjetradition sedan 1985</h3>
                     <p class="about-description">
                         Vår gård har varit i familjen i flera generationer. Vi tror på hållbart jordbruk och att 
@@ -197,18 +370,18 @@
     </section>
 
     <!-- Blog/News Section -->
-    <section id="blog" class="blog-section">
+    <section id="blog" class="blog-section" aria-labelledby="blog-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Nyheter från Gården</h2>
+                <h2 id="blog-title" class="section-title">Nyheter från Gården</h2>
                 <p class="section-subtitle">Senaste uppdateringarna och händelserna</p>
             </div>
             
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400" alt="Vårplantering">
-                        <span class="blog-date">15 Mars 2024</span>
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400" alt="Vårplantering på Rengsjö Farm" loading="lazy" width="400" height="300">
+                        <time class="blog-date" datetime="2024-03-15">15 Mars 2024</time>
                     </div>
                     <div class="blog-content">
                         <h3>Vårplanteringen har börjat!</h3>
@@ -219,8 +392,8 @@
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=400" alt="Nya lamm">
-                        <span class="blog-date">10 Mars 2024</span>
+                        <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=400" alt="Nya lamm på Rengsjö Farm" loading="lazy" width="400" height="300">
+                        <time class="blog-date" datetime="2024-03-10">10 Mars 2024</time>
                     </div>
                     <div class="blog-content">
                         <h3>Välkomna våra nya lamm</h3>
@@ -231,8 +404,8 @@
                 
                 <article class="blog-card">
                     <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400" alt="Hållbarhet">
-                        <span class="blog-date">5 Mars 2024</span>
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400" alt="Hållbarhetsrapport Rengsjö Farm" loading="lazy" width="400" height="300">
+                        <time class="blog-date" datetime="2024-03-05">5 Mars 2024</time>
                     </div>
                     <div class="blog-content">
                         <h3>Vår hållbarhetsrapport 2024</h3>
@@ -245,10 +418,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Kontakta oss</h2>
+                <h2 id="contact-title" class="section-title">Kontakta oss</h2>
                 <p class="section-subtitle">Vi svarar gärna på dina frågor om våra produkter och leveranser.</p>
             </div>
             
@@ -298,18 +471,18 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" aria-label="Kontaktformulär">
                     <div class="form-group">
-                        <label for="name">Namn</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">Namn <span aria-label="krävs">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="email">E-post</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">E-post <span aria-label="krävs">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="message">Meddelande</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Meddelande <span aria-label="krävs">*</span></label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Skicka meddelande</button>
                 </form>
@@ -317,15 +490,17 @@
         </div>
     </section>
 
+    </main>
+    
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>Rengsjö Farm</h3>
                     <p>Kvalitet från jord till bord sedan 1985</p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Fotnotsnavigation">
                     <h4>Snabblänkar</h4>
                     <ul>
                         <li><a href="#home">Hem</a></li>
@@ -333,7 +508,7 @@
                         <li><a href="#about">Om oss</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
-                </div>
+                </nav>
                 <div class="footer-social">
                     <h4>Följ oss</h4>
                     <div class="social-links">
@@ -349,5 +524,16 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Register Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('ServiceWorker registered:', registration.scope))
+                    .catch(err => console.log('ServiceWorker registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>

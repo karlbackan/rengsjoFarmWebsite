@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sidan hittades inte | Rengsjö Farm</title>
+    <meta name="description" content="Sidan du letar efter kunde inte hittas.">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-content {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--farm-green);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-icon">🌾</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Sidan kunde inte hittas</h1>
+            <p class="error-description">
+                Det verkar som att sidan du letar efter har flyttat eller inte existerar. 
+                Kanske har den gått vilse bland våra åkrar?
+            </p>
+            <a href="/" class="btn btn-primary">Tillbaka till startsidan</a>
+        </div>
+    </div>
+</body>
+</html>
