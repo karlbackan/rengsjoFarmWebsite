@@ -3,528 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rengsjö Farm - Gårdsprodukter direkt från producenten</title>
-    <meta name="description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
+    <meta name="description" content="Rengsjö Farm - Etiskt uppfödda lamm på naturliga betesmarker sedan 1985">
+    <title>Rengsjö Farm - Lammkött från hjärtat av Hälsingland</title>
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Rengsjö Farm - Gårdsprodukter direkt från producenten">
-    <meta property="og:description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rengsjöfarm.se">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#2d5016">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self';">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Rengsjö Farm - Gårdsprodukter direkt från producenten">
-    <meta property="og:description" content="Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rengsjofarm.se">
-    <meta property="og:image" content="https://rengsjofarm.se/images/farm-hero.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rengsjö Farm">
-    <meta name="twitter:description" content="Familjeägd gård i Rengsjö med färska gårdsprodukter">
-    
-    <!-- Theme Color for Mobile Browsers -->
-    <meta name="theme-color" content="#2d5016">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://rengsjofarm.se">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/main.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-    
-    <!-- DNS Prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Stylesheets -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- For debugging: Add ?debug=true to URL to enable debug mode -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Rengsjö Farm",
-      "description": "Familjeägd gård i Rengsjö. Vi erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.",
-      "image": "https://rengsjofarm.se/images/farm-hero.jpg",
-      "@id": "https://rengsjofarm.se",
-      "url": "https://rengsjofarm.se",
-      "telephone": "+46701234567",
-      "email": "info@rengsjofarm.se",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Gårdsvägen 123",
-        "addressLocality": "Rengsjö",
-        "postalCode": "820 40",
-        "addressCountry": "SE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 61.3000,
-        "longitude": 16.6833
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "14:00"
-        }
-      ],
-      "priceRange": "$$",
-      "servesCuisine": "Farm Products",
-      "hasMap": "https://maps.google.com/?q=Rengsjö+Farm",
-      "sameAs": [
-        "https://facebook.com/rengsjofarm",
-        "https://instagram.com/rengsjofarm"
-      ]
-    }
-    </script>
-    
-    <!-- Structured Data for Local Business -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Rengsjö Farm",
-        "description": "Familjeägd gård i Rengsjö som erbjuder färska gårdsprodukter med fokus på kvalitet och hållbarhet.",
-        "url": "https://rengsjöfarm.se",
-        "telephone": "+46701234567",
-        "email": "info@rengsjofarm.se",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Gårdsvägen 123",
-            "addressLocality": "Rengsjö",
-            "postalCode": "820 40",
-            "addressCountry": "SE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 61.5,
-            "longitude": 16.5
-        },
-        "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "17:00"
-        }, {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "14:00"
-        }],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Gårdsprodukter",
-            "itemListElement": [{
-                "@type": "Product",
-                "name": "Hö",
-                "description": "Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur."
-            }, {
-                "@type": "Product",
-                "name": "Lammkött",
-                "description": "Mört och smakrikt kött från våra naturbetande lamm."
-            }]
-        }
-    }
-    </script>
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
+    <!-- Skip to content for accessibility -->
     <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
-    <!-- Navigation -->
-    <header class="header" role="banner">
-        <nav class="nav-container" role="navigation" aria-label="Huvudnavigation">
-            <div class="logo">
-                <a href="#home">
-                    <i class="fas fa-seedling"></i>
-                    Rengsjö Farm
-                </a>
-            </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Hem</a></li>
-                <li><a href="#products">Produkter</a></li>
-                <li><a href="#season">Säsong</a></li>
-                <li><a href="#about">Om oss</a></li>
-                <li><a href="#blog">Nyheter</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Växla tema">
-                <i class="fas fa-moon"></i>
-            </button>
-        </nav>
+
+    <!-- Simple Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Rengsjö Farm</h1>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main" role="main">
-    <!-- Hero Section -->
-    <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 id="hero-title" class="hero-title">
-                        Välkommen till <span class="highlight">Rengsjö Farm</span>
-                    </h1>
-                    <p class="hero-description">
-                        Familjeägd gård sedan 1985. Vi erbjuder färska gårdsprodukter av högsta kvalitet. 
-                        Vårt hållbara jordbruk säkerställer bästa möjliga produkter samtidigt som vi värnar om naturen.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#products" class="btn btn-primary">Våra produkter</a>
-                        <a href="#about" class="btn btn-secondary">Läs mer om oss</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&q=80" 
-                         alt="Vacker gårdsvy med gröna fält vid Rengsjö Farm" 
-                         loading="eager"
-                         fetchpriority="high"
-                         width="800" 
-                         height="600"
-                         style="object-fit: cover; border-radius: 10px;">
-                </div>
+    <main id="main">
+        <!-- Hero Section - Brief Introduction -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Familjeägd gård sedan 1985</h2>
+                <p class="hero-text">Vi föder upp lamm på naturliga betesmarker i Hälsingland. 
+                   Våra djur lever ett gott liv utomhus året runt.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products" aria-labelledby="products-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="products-title" class="section-title">Våra produkter</h2>
-                <p class="section-subtitle">Kvalitetsprodukter direkt från gården till dig.</p>
+        <!-- Animal Welfare Gallery -->
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">Så lever våra djur</h2>
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80" 
+                             alt="Lamm på grön äng" 
+                             loading="lazy">
+                        <figcaption>Fritt bete på naturliga ängar</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80" 
+                             alt="Får i flock" 
+                             loading="lazy">
+                        <figcaption>Djuren lever i flock som de ska</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=800&q=80" 
+                             alt="Lamm med tacka" 
+                             loading="lazy">
+                        <figcaption>Lammen får vara med sina mödrar</figcaption>
+                    </figure>
+                    <figure class="gallery-item large">
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1200&q=80" 
+                             alt="Fårherde med flock" 
+                             loading="lazy">
+                        <figcaption>Daglig tillsyn och omsorg</figcaption>
+                    </figure>
+                </div>
             </div>
-            
-            <div class="product-grid">
-                <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80" 
-                             alt="Högkvalitativt soltorkat hö för djur" 
-                             loading="lazy"
-                             width="600" 
-                             height="400"
-                             itemprop="image"
-                             style="object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <span itemprop="price">Från 50</span>
-                            <meta itemprop="priceCurrency" content="SEK">
-                            kr/bal
-                        </span>
-                        <h3 itemprop="name">Hö</h3>
-                        <p itemprop="description">Högkvalitativt, soltorkat hö perfekt för hästar, nötkreatur och andra djur.</p>
-                        <ul class="product-features">
-                            <li>Soltorkat för optimal näring</li>
-                            <li>Skördat vid perfekt mognad</li>
-                            <li>Låg fukthalt</li>
-                            <li>Finns i små och stora balar</li>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">Våra lammköttsboxar</h2>
+                <div class="products-grid">
+                    <article class="product-card">
+                        <h3 class="product-title">Liten låda</h3>
+                        <p class="product-weight">5 kg blandat lammkött</p>
+                        <ul class="product-content">
+                            <li>Kotletter</li>
+                            <li>Färs</li>
+                            <li>Grytbitar</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary">Beställ nu</a>
-                    </div>
-                </article>
-                
-                <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80" 
-                             alt="Mört lammkött från naturbetande lamm" 
-                             loading="lazy"
-                             width="600" 
-                             height="400"
-                             itemprop="image"
-                             style="object-fit: cover;">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <span itemprop="price">Från 120</span>
-                            <meta itemprop="priceCurrency" content="SEK">
-                            kr/kg
-                        </span>
-                        <h3 itemprop="name">Lammkött</h3>
-                        <p itemprop="description">Mört och smakrikt kött från våra naturbetande lamm.</p>
-                        <ul class="product-features">
-                            <li>100% naturbete</li>
-                            <li>Inga antibiotika eller hormoner</li>
-                            <li>Olika styckningsdelar</li>
-                            <li>Anpassad styckning möjlig</li>
+                        <p class="product-price">850 kr</p>
+                    </article>
+                    
+                    <article class="product-card featured">
+                        <h3 class="product-title">Familjelåda</h3>
+                        <p class="product-weight">10 kg blandat lammkött</p>
+                        <ul class="product-content">
+                            <li>Lammstek</li>
+                            <li>Kotletter</li>
+                            <li>Färs</li>
+                            <li>Grytbitar</li>
+                            <li>Korv</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary">Beställ nu</a>
-                    </div>
-                </article>
+                        <p class="product-price">1 500 kr</p>
+                        <span class="product-badge">Populärast</span>
+                    </article>
+                    
+                    <article class="product-card">
+                        <h3 class="product-title">Stor låda</h3>
+                        <p class="product-weight">15 kg blandat lammkött</p>
+                        <ul class="product-content">
+                            <li>Helt sortiment</li>
+                            <li>Perfekt för sällskap</li>
+                            <li>Frysvänligt förpackat</li>
+                        </ul>
+                        <p class="product-price">2 100 kr</p>
+                    </article>
+                </div>
+                <p class="products-note">Alla priser inkluderar moms. Fri leverans inom Gävleborgs län vid köp över 1000 kr.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seasonal Availability Section -->
-    <section id="season" class="season-section" aria-labelledby="season-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="season-title" class="section-title">Säsongens Produkter</h2>
-                <p class="section-subtitle">Klicka på en säsong för att se vad som finns tillgängligt</p>
-            </div>
-            
-            <div class="season-tabs">
-                <button class="season-tab active" data-season="spring">
-                    <i class="fas fa-seedling"></i> Vår
-                </button>
-                <button class="season-tab" data-season="summer">
-                    <i class="fas fa-sun"></i> Sommar
-                </button>
-                <button class="season-tab" data-season="autumn">
-                    <i class="fas fa-leaf"></i> Höst
-                </button>
-                <button class="season-tab" data-season="winter">
-                    <i class="fas fa-snowflake"></i> Vinter
-                </button>
-            </div>
-            
-            <div class="season-content" id="seasonContent">
-                <!-- Content will be dynamically loaded -->
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about" aria-labelledby="about-title">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 id="about-title" class="section-title">Om Rengsjö Farm</h2>
-                    <h3 class="about-subtitle">En familjetradition sedan 1985</h3>
-                    <p class="about-description">
-                        Vår gård har varit i familjen i flera generationer. Vi tror på hållbart jordbruk och att 
-                        producera mat av högsta kvalitet samtidigt som vi tar hand om jorden för framtida generationer.
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">Beställ din låda</h2>
+                <div class="contact-content">
+                    <p class="contact-text">
+                        Ring eller maila för att beställa. Vi levererar vanligtvis inom en vecka.
                     </p>
-                    
-                    <div class="about-features">
-                        <div class="feature-card">
-                            <div class="feature-icon">🌱</div>
-                            <h4>Hållbart jordbruk</h4>
-                            <p>Vi använder naturliga metoder och undviker kemiska bekämpningsmedel för att bevara jordens naturliga balans.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">🐑</div>
-                            <h4>Djurvälfärd</h4>
-                            <p>Våra djur får beta fritt på naturliga ängar och behandlas med respekt och omsorg.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">📍</div>
-                            <h4>Lokal produktion</h4>
-                            <p>Alla våra produkter produceras här på gården, vilket garanterar färskhet och kvalitet.</p>
-                        </div>
+                    <div class="contact-methods">
+                        <a href="tel:070-123 45 67" class="contact-link">
+                            <span class="contact-label">Telefon</span>
+                            <span class="contact-value">070-123 45 67</span>
+                        </a>
+                        <a href="mailto:info@rengsjofarm.se" class="contact-link">
+                            <span class="contact-label">E-post</span>
+                            <span class="contact-value">info@rengsjofarm.se</span>
+                        </a>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&h=600&fit=crop" 
-                         alt="Familjen på Rengsjö Farm" 
-                         loading="lazy"
-                         width="800" 
-                         height="600">
+                    <p class="contact-hours">
+                        Vi svarar vardagar 8-17, lördagar 9-13
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Blog/News Section -->
-    <section id="blog" class="blog-section" aria-labelledby="blog-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="blog-title" class="section-title">Nyheter från Gården</h2>
-                <p class="section-subtitle">Senaste uppdateringarna och händelserna</p>
-            </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400" alt="Vårplantering på Rengsjö Farm" loading="lazy" width="400" height="300">
-                        <time class="blog-date" datetime="2024-03-15">15 Mars 2024</time>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Vårplanteringen har börjat!</h3>
-                        <p>Äntligen är våren här och vi har börjat förbereda årets odlingar...</p>
-                        <a href="#" class="read-more">Läs mer →</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=400" alt="Nya lamm på Rengsjö Farm" loading="lazy" width="400" height="300">
-                        <time class="blog-date" datetime="2024-03-10">10 Mars 2024</time>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Välkomna våra nya lamm</h3>
-                        <p>Fem nya lamm har fötts på gården denna vecka...</p>
-                        <a href="#" class="read-more">Läs mer →</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400" alt="Hållbarhetsrapport Rengsjö Farm" loading="lazy" width="400" height="300">
-                        <time class="blog-date" datetime="2024-03-05">5 Mars 2024</time>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Vår hållbarhetsrapport 2024</h3>
-                        <p>Vi är stolta över att dela våra framsteg inom hållbart jordbruk...</p>
-                        <a href="#" class="read-more">Läs mer →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="contact-title" class="section-title">Kontakta oss</h2>
-                <p class="section-subtitle">Vi svarar gärna på dina frågor om våra produkter och leveranser.</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Kontaktinformation</h3>
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div>
-                            <strong>Adress:</strong><br>
-                            Rengsjö Farm<br>
-                            Gårdsvägen 123<br>
-                            820 40 Rengsjö
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">📞</div>
-                        <div>
-                            <strong>Telefon:</strong><br>
-                            <a href="tel:+46701234567">070-123 45 67</a>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">✉️</div>
-                        <div>
-                            <strong>E-post:</strong><br>
-                            <a href="mailto:info@rengsjofarm.se">info@rengsjofarm.se</a>
-                        </div>
-                    </div>
-                    
-                    <div class="hours">
-                        <h3>Öppettider</h3>
-                        <table class="hours-table">
-                            <tr>
-                                <td>Måndag - Fredag:</td>
-                                <td>08:00 - 17:00</td>
-                            </tr>
-                            <tr>
-                                <td>Lördag:</td>
-                                <td>09:00 - 14:00</td>
-                            </tr>
-                            <tr>
-                                <td>Söndag:</td>
-                                <td>Stängt</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contactForm" aria-label="Kontaktformulär">
-                    <div class="form-group">
-                        <label for="name">Namn <span aria-label="krävs">*</span></label>
-                        <input type="text" id="name" name="name" required aria-required="true">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-post <span aria-label="krävs">*</span></label>
-                        <input type="email" id="email" name="email" required aria-required="true">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Meddelande <span aria-label="krävs">*</span></label>
-                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Skicka meddelande</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
+        </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+
+    <!-- Simple Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Rengsjö Farm</h3>
-                    <p>Kvalitet från jord till bord sedan 1985</p>
-                </div>
-                <nav class="footer-links" aria-label="Fotnotsnavigation">
-                    <h4>Snabblänkar</h4>
-                    <ul>
-                        <li><a href="#home">Hem</a></li>
-                        <li><a href="#products">Produkter</a></li>
-                        <li><a href="#about">Om oss</a></li>
-                        <li><a href="#contact">Kontakt</a></li>
-                    </ul>
-                </nav>
-                <div class="footer-social">
-                    <h4>Följ oss</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Rengsjö Farm. Alla rättigheter förbehållna.</p>
-            </div>
+            <p>&copy; 2024 Rengsjö Farm. Gårdsvägen 123, 820 40 Rengsjö</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    
-    <!-- Register Service Worker for PWA -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('ServiceWorker registered:', registration.scope))
-                    .catch(err => console.log('ServiceWorker registration failed:', err));
-            });
-        }
-    </script>
 </body>
 </html>
