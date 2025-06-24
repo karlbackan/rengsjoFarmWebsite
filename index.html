@@ -238,25 +238,35 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
+                
+                // Special handling for home/hero section
+                if (targetId === '#hero') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
                 const target = document.querySelector(targetId);
                 
                 if (target) {
-                    // Get the header height
-                    const header = document.querySelector('.header');
-                    const headerHeight = header.offsetHeight;
+                    // For gallery and products, scroll to the h2 title
+                    if (targetId === '#gallery' || targetId === '#products') {
+                        const h2 = target.querySelector('h2');
+                        if (h2) {
+                            h2.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            return;
+                        }
+                    }
                     
-                    // Find the h2 title within the section
-                    const title = target.querySelector('h2');
-                    const elementToScroll = title || target;
-                    
-                    // Calculate the exact position
-                    const rect = elementToScroll.getBoundingClientRect();
-                    const absoluteTop = rect.top + window.pageYOffset;
-                    
-                    // Scroll to position minus header height
-                    window.scrollTo({
-                        top: absoluteTop - headerHeight,
-                        behavior: 'smooth'
+                    // For other sections, scroll to the section
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
@@ -341,27 +351,8 @@
         window.addEventListener('scroll', highlightNav);
         highlightNav();
         
-        // Subtle parallax effect for hero
-        const hero = document.querySelector('.hero');
-        let ticking = false;
-        
-        function updateParallax() {
-            const scrolled = window.scrollY;
-            const speed = 0.3;
-            const maxScroll = 200; // Limit parallax effect
-            const translateY = Math.min(scrolled * speed, maxScroll);
-            hero.style.transform = `translateY(${translateY}px)`;
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', requestTick);
+        // Parallax effect disabled - was causing navigation issues
+        // The transform was pushing sections down and breaking scroll positioning
         
         // Performance optimization: Debounce scroll events
         let scrollTimeout;
