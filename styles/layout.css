@@ -190,6 +190,7 @@ section h2 {
   position: relative;
   z-index: 2;
   overflow: visible;
+  padding-top: 0; /* Remove top padding */
 }
 
 .gallery-grid {
