@@ -64,10 +64,35 @@ section {
   text-decoration: none;
   transition: var(--transition-base);
   padding: var(--space-1) 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-sage);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover {
   color: var(--color-sage);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-sage);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background: var(--color-sage);
 }
 
 @media (max-width: 600px) {
@@ -89,7 +114,22 @@ section {
 .hero {
   text-align: center;
   padding: var(--space-16) 0;
-  background: var(--color-white);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream) 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  will-change: transform;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(124, 132, 113, 0.05) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-title {
@@ -106,6 +146,8 @@ section {
 /* Gallery Grid */
 .gallery {
   background: var(--color-cream);
+  position: relative;
+  z-index: 2;
 }
 
 .gallery-grid {

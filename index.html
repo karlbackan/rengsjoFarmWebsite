@@ -9,22 +9,29 @@
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <!-- Page loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
     <!-- Header with navigation -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo-link">
+                <a href="#hero" class="logo-link no-select">
                     <h1 class="logo">Rengsjö Farm</h1>
                 </a>
-                <nav class="nav" aria-label="Huvudnavigation">
+                <nav class="nav no-select" aria-label="Huvudnavigation">
                     <a href="#hero" class="nav-link">Hem</a>
                     <a href="#gallery" class="nav-link">Våra djur</a>
                     <a href="#products" class="nav-link">Lammkött</a>
@@ -38,8 +45,8 @@
         <!-- Hero Section - Brief Introduction -->
         <section class="hero" id="hero">
             <div class="container">
-                <h2 class="hero-title">Familjeägd gård sedan 1985</h2>
-                <p class="hero-text">Vi föder upp lamm på naturliga betesmarker i Hälsingland. 
+                <h2 class="hero-title animate-fadeInUp">Familjeägd gård sedan 1985</h2>
+                <p class="hero-text animate-fadeInUp" style="animation-delay: 0.2s;">Vi föder upp lamm på naturliga betesmarker i Hälsingland. 
                    Våra djur lever ett gott liv utomhus året runt.</p>
             </div>
         </section>
@@ -47,27 +54,27 @@
         <!-- Animal Welfare Gallery -->
         <section class="gallery" id="gallery">
             <div class="container">
-                <h2 class="section-title">Så lever våra djur</h2>
-                <div class="gallery-grid">
-                    <figure class="gallery-item">
+                <h2 class="section-title scroll-reveal">Så lever våra djur</h2>
+                <div class="gallery-grid animate-stagger">
+                    <figure class="gallery-item hover-lift image-overlay">
                         <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80" 
                              alt="Lamm på grön äng" 
                              loading="lazy">
                         <figcaption>Fritt bete på naturliga ängar</figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item hover-lift image-overlay">
                         <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80" 
                              alt="Får i flock" 
                              loading="lazy">
                         <figcaption>Djuren lever i flock som de ska</figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item hover-lift image-overlay">
                         <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=800&q=80" 
                              alt="Lamm med tacka" 
                              loading="lazy">
                         <figcaption>Lammen får vara med sina mödrar</figcaption>
                     </figure>
-                    <figure class="gallery-item large">
+                    <figure class="gallery-item large hover-lift image-overlay">
                         <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1200&q=80" 
                              alt="Fårherde med flock" 
                              loading="lazy">
@@ -80,9 +87,9 @@
         <!-- Products Section -->
         <section class="products" id="products">
             <div class="container">
-                <h2 class="section-title">Våra lammköttsboxar</h2>
+                <h2 class="section-title scroll-reveal">Våra lammköttsboxar</h2>
                 <div class="products-grid">
-                    <article class="product-card">
+                    <article class="product-card scroll-reveal">
                         <h3 class="product-title">Liten låda</h3>
                         <p class="product-weight">5 kg blandat lammkött</p>
                         <ul class="product-content">
@@ -93,7 +100,7 @@
                         <p class="product-price">850 kr</p>
                     </article>
                     
-                    <article class="product-card featured">
+                    <article class="product-card featured scroll-reveal">
                         <h3 class="product-title">Familjelåda</h3>
                         <p class="product-weight">10 kg blandat lammkött</p>
                         <ul class="product-content">
@@ -107,7 +114,7 @@
                         <span class="product-badge">Populärast</span>
                     </article>
                     
-                    <article class="product-card">
+                    <article class="product-card scroll-reveal">
                         <h3 class="product-title">Stor låda</h3>
                         <p class="product-weight">15 kg blandat lammkött</p>
                         <ul class="product-content">
@@ -154,5 +161,175 @@
             <p>&copy; 2025 Rengsjö Farm. Östra Höle 9326, 821 98 Rengsjö</p>
         </div>
     </footer>
+    
+    <script>
+        // Page loader
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.page-loader');
+            setTimeout(() => {
+                loader.classList.add('loaded');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 300);
+        });
+        
+        // Lazy loading images with fade in
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('lazy-loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+        
+        images.forEach(img => {
+            imageObserver.observe(img);
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#hero') {
+                    // Scroll to top for hero/home
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Scroll-triggered animations
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+        
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.classList.add('revealed');
+        };
+        
+        const hideScrollElement = (element) => {
+            element.classList.remove('revealed');
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el)
+                }
+            })
+        }
+        
+        window.addEventListener('scroll', () => { 
+            handleScrollAnimation();
+        });
+        
+        // Active navigation highlight
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        const highlightNav = () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Check if at bottom of page
+            if (scrollY + windowHeight >= documentHeight - 50) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#contact') {
+                        link.classList.add('active');
+                    }
+                });
+                return;
+            }
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', highlightNav);
+        highlightNav();
+        
+        // Subtle parallax effect for hero
+        const hero = document.querySelector('.hero');
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.scrollY;
+            const speed = 0.3;
+            const maxScroll = 200; // Limit parallax effect
+            const translateY = Math.min(scrolled * speed, maxScroll);
+            hero.style.transform = `translateY(${translateY}px)`;
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+        
+        // Performance optimization: Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                handleScrollAnimation();
+                highlightNav();
+            }, 10);
+        }, { passive: true });
+    </script>
 </body>
 </html>

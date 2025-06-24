@@ -13,6 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 80px; /* Account for fixed header */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 @media (max-width: 600px) {
@@ -25,18 +27,38 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-heading);
   font-weight: 600;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
 }
 
 h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
   font-size: var(--font-size-xl);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h3 {
+    font-size: var(--font-size-xl);
+  }
 }
 
 p {
