@@ -566,3 +566,51 @@ function addRippleEffect() {
 }
 
 document.addEventListener('DOMContentLoaded', addRippleEffect);
+
+// Debug mode - Add ?debug=true to URL to enable
+function initDebugMode() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const debugMode = urlParams.get('debug') === 'true';
+    
+    if (debugMode) {
+        document.body.classList.add('debug-mode');
+        console.log('🐛 Debug mode enabled');
+        
+        // Log all CSS variables
+        const styles = getComputedStyle(document.documentElement);
+        console.log('CSS Variables:', {
+            'Primary Text': styles.getPropertyValue('--color-text-primary'),
+            'Secondary Text': styles.getPropertyValue('--color-text-secondary'),
+            'Background': styles.getPropertyValue('--color-bg-primary'),
+            'Primary Color': styles.getPropertyValue('--color-primary')
+        });
+        
+        // Add debug panel
+        const debugPanel = document.createElement('div');
+        debugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            max-width: 300px;
+        `;
+        
+        debugPanel.innerHTML = `
+            <h4 style="margin: 0 0 10px 0;">Debug Panel</h4>
+            <p>Text Primary: ${styles.getPropertyValue('--color-text-primary')}</p>
+            <p>Text Secondary: ${styles.getPropertyValue('--color-text-secondary')}</p>
+            <p>BG Primary: ${styles.getPropertyValue('--color-bg-primary')}</p>
+            <button onclick="this.parentElement.remove()">Close</button>
+        `;
+        
+        document.body.appendChild(debugPanel);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initDebugMode);
