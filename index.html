@@ -484,6 +484,35 @@
             }, 10);
         }, { passive: true });
         
+        // Touch interaction for mobile
+        if ('ontouchstart' in window) {
+            // Add touch feedback for gallery items
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    this.classList.add('touch-active');
+                });
+                
+                item.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('touch-active');
+                    }, 300);
+                });
+            });
+            
+            // Add touch feedback for product cards
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('touch-active');
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('touch-active');
+                    }, 300);
+                });
+            });
+        }
+        
         // Gallery expand functionality
         const galleryExpandBtn = document.getElementById('galleryExpandBtn');
         const galleryGrid = document.getElementById('galleryGrid');

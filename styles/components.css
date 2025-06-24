@@ -58,6 +58,34 @@
   transform: translateY(0);
 }
 
+/* Touch interactions for mobile */
+@media (pointer: coarse) {
+  /* Gallery items - add active state for touch */
+  .gallery-item:active,
+  .gallery-item.touch-active {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .gallery-item:active img,
+  .gallery-item.touch-active img,
+  .gallery-item:active video,
+  .gallery-item.touch-active video {
+    transform: scale(1.1);
+  }
+  
+  .gallery-item:active figcaption,
+  .gallery-item.touch-active figcaption {
+    transform: translateY(0);
+  }
+  
+  /* Make gallery items tappable */
+  .gallery-item {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 /* Product Cards */
 .product-card {
   background: var(--color-white);
@@ -256,6 +284,31 @@
 .contact-value {
   font-size: var(--font-size-lg);
   font-weight: 500;
+}
+
+/* Touch interactions for product cards on mobile */
+@media (pointer: coarse) {
+  .product-card:active,
+  .product-card.touch-active {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+  
+  .product-card:active::before,
+  .product-card.touch-active::before {
+    transform: scaleX(1);
+  }
+  
+  .product-card:active::after,
+  .product-card.touch-active::after {
+    opacity: 1;
+  }
+  
+  /* Make product cards tappable */
+  .product-card {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /* Gallery expand button */
