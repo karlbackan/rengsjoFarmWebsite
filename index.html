@@ -291,6 +291,15 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 
+                // Immediately update active navigation
+                if (this.classList.contains('nav-link')) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                }
+                
                 // Special handling for home/hero section
                 if (targetId === '#hero') {
                     window.scrollTo({
@@ -401,20 +410,52 @@
                 return;
             }
             
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - offset;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            // Special handling for contact section
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                const contactTop = contactSection.offsetTop - offset;
+                // If we're past the start of contact section, highlight it
+                if (scrollY >= contactTop) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
+                        if (link.getAttribute('href') === '#contact') {
                             link.classList.add('active');
                         }
                     });
+                    return;
+                }
+            }
+            
+            // Find which section is most in view
+            let currentSection = null;
+            let maxVisible = 0;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - offset;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const viewportTop = scrollY;
+                const viewportBottom = scrollY + windowHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(sectionTop, viewportTop);
+                const visibleBottom = Math.min(sectionBottom, viewportBottom);
+                const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                
+                if (visibleHeight > maxVisible) {
+                    maxVisible = visibleHeight;
+                    currentSection = section.getAttribute('id');
                 }
             });
+            
+            // Highlight the section that's most visible
+            if (currentSection) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         };
         
         window.addEventListener('scroll', highlightNav);
