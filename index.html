@@ -17,13 +17,17 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <!-- Skip to content for accessibility -->
-    <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
-
-    <!-- Simple Header -->
+    <!-- Header with navigation -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">Rengsjö Farm</h1>
+            <div class="header-content">
+                <h1 class="logo">Rengsjö Farm</h1>
+                <nav class="nav" aria-label="Huvudnavigation">
+                    <a href="#gallery" class="nav-link">Djur</a>
+                    <a href="#products" class="nav-link">Produkter</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -38,7 +42,7 @@
         </section>
 
         <!-- Animal Welfare Gallery -->
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <h2 class="section-title">Så lever våra djur</h2>
                 <div class="gallery-grid">
@@ -71,7 +75,7 @@
         </section>
 
         <!-- Products Section -->
-        <section class="products">
+        <section class="products" id="products">
             <div class="container">
                 <h2 class="section-title">Våra lammköttsboxar</h2>
                 <div class="products-grid">
@@ -116,7 +120,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <h2 class="section-title">Beställ din låda</h2>
                 <div class="contact-content">
@@ -144,7 +148,7 @@
     <!-- Simple Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Rengsjö Farm. Gårdsvägen 123, 820 40 Rengsjö</p>
+            <p>&copy; 2024 Rengsjö Farm. Östra Höle 9326, 820 40 Rengsjö</p>
         </div>
     </footer>
 </body>

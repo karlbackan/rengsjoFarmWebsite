@@ -1,5 +1,9 @@
 /* Base Styles - Global element styling */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
@@ -61,18 +65,3 @@ ul {
   margin: 0;
 }
 
-/* Accessibility */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-charcoal);
-  color: var(--color-white);
-  padding: var(--space-2);
-  text-decoration: none;
-  border-radius: var(--border-radius);
-}
-
-.skip-link:focus {
-  top: var(--space-2);
-}
