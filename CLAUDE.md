@@ -128,3 +128,82 @@ rengsjöFarmWebsite/
 ├── images/          # Image assets
 └── CLAUDE.md        # This file
 ```
+
+## Testing and Improvement Methodology with Playwright
+
+### 1. **Server Setup**
+- Always ensure the server is running on the correct port
+- The user typically starts the server on port 8080
+- If port conflicts arise, let the user handle server management
+
+### 2. **Iterative UI Testing Process**
+
+#### Phase 1: Visual Inspection
+1. Navigate to the website using Playwright
+2. Take screenshots at different viewport sizes (desktop, tablet, mobile)
+3. Scroll through the entire page capturing key sections
+4. Document visual issues found
+
+#### Phase 2: Research Best Practices
+1. Use WebSearch to find current UI/UX trends for the specific industry
+2. Search for competitor websites for inspiration
+3. Look up specific CSS/JS solutions for identified problems
+
+#### Phase 3: Implementation
+1. Fix identified issues one section at a time
+2. Test each fix immediately with Playwright
+3. Compare before/after screenshots
+
+#### Phase 4: Interaction Testing
+1. Test all interactive elements (buttons, forms, navigation)
+2. Verify hover states and transitions
+3. Check keyboard navigation
+4. Test form submissions and validations
+
+#### Phase 5: Performance Testing
+1. Check page load times
+2. Verify lazy loading works
+3. Test offline functionality (PWA)
+4. Monitor console for errors
+
+### 3. **Common Issues to Check**
+- Text readability and contrast
+- Proper spacing and alignment
+- Responsive behavior at different screen sizes
+- Image loading and optimization
+- Interactive element feedback
+- Navigation usability
+- Form accessibility
+- Loading states
+- Error handling
+
+### 4. **Playwright Commands Reference**
+```javascript
+// Navigation
+await page.goto('http://localhost:8080');
+
+// Screenshots
+await page.screenshot({ fullPage: true });
+
+// Viewport testing
+await page.setViewportSize({ width: 375, height: 667 }); // Mobile
+await page.setViewportSize({ width: 768, height: 1024 }); // Tablet
+await page.setViewportSize({ width: 1920, height: 1080 }); // Desktop
+
+// Interaction testing
+await page.click('button.cta');
+await page.fill('input[name="email"]', 'test@example.com');
+await page.press('Tab');
+
+// Scroll testing
+await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+// Performance metrics
+const metrics = await page.evaluate(() => JSON.stringify(window.performance.timing));
+```
+
+### 5. **Continuous Improvement Loop**
+1. Test → Identify Issues → Research Solutions → Implement → Test Again
+2. Always validate changes across different viewports
+3. Keep accessibility in mind throughout
+4. Document all major changes and their rationale

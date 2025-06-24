@@ -1,12 +1,15 @@
 /* Root Variables with Dark Mode Support */
 :root {
     /* Color Palette - Light Mode */
-    --farm-green: #2d5016;
+    --farm-green: #4a7c2b;
     --farm-brown: #8b4513;
     --farm-yellow: #f4a460;
+    --farm-orange: #ff8c42;
+    --farm-red: #d64545;
     --farm-cream: #faf6f2;
+    --farm-light-green: #8bc34a;
     --text-dark: #1a1a1a;
-    --text-light: #666;
+    --text-light: #555;
     --white: #ffffff;
     --bg-primary: #ffffff;
     --bg-secondary: #faf6f2;
@@ -20,6 +23,7 @@
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
+    --space-3xl: 4rem;
     
     /* Typography Scale */
     --font-xs: 0.75rem;
@@ -30,14 +34,25 @@
     --font-2xl: 1.5rem;
     --font-3xl: 2rem;
     --font-4xl: 3rem;
+    --font-5xl: 3.5rem;
+    
+    /* Container Sizes */
+    --container-xs: 20rem;
+    --container-sm: 40rem;
+    --container-md: 48rem;
+    --container-lg: 64rem;
+    --container-xl: 80rem;
 }
 
 /* Dark Mode */
 [data-theme="dark"] {
-    --farm-green: #4a7c2b;
+    --farm-green: #5a8c3b;
     --farm-brown: #a65d2f;
     --farm-yellow: #f5b876;
+    --farm-orange: #ff9d5c;
+    --farm-red: #e65656;
     --farm-cream: #2a2a2a;
+    --farm-light-green: #9bd45a;
     --text-dark: #f0f0f0;
     --text-light: #b0b0b0;
     --white: #1a1a1a;
@@ -53,52 +68,6 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-}
-    --space-3xl: 4rem;
-    
-    /* Typography Scale */
-    --font-xs: 0.75rem;
-    --font-sm: 0.875rem;
-    --font-base: 1rem;
-    --font-lg: 1.125rem;
-    --font-xl: 1.25rem;
-    --font-2xl: 1.5rem;
-    --font-3xl: 1.875rem;
-    --font-4xl: 2.25rem;
-    --font-5xl: 3rem;
-    
-    /* Container Sizes */
-    --container-xs: 20rem;
-    --container-sm: 40rem;
-    --container-md: 48rem;
-    --container-lg: 64rem;
-    --container-xl: 80rem;
-}
-
-/* Dark Mode Variables */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --farm-green: #4a7c2a;
-        --farm-brown: #b5651d;
-        --farm-yellow: #f5b876;
-        --farm-cream: #1a1a1a;
-        --text-dark: #f0f0f0;
-        --text-light: #b0b0b0;
-        --white: #242424;
-        --shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-}
-
-/* Explicit Dark Mode Toggle */
-[data-theme="dark"] {
-    --farm-green: #4a7c2a;
-    --farm-brown: #b5651d;
-    --farm-yellow: #f5b876;
-    --farm-cream: #1a1a1a;
-    --text-dark: #f0f0f0;
-    --text-light: #b0b0b0;
-    --white: #242424;
-    --shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* Reset & Base Styles */
@@ -166,16 +135,18 @@ select:focus-visible {
 /* Buttons with Better Accessibility */
 .btn {
     display: inline-block;
-    padding: var(--space-sm) var(--space-lg);
-    font-weight: 500;
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 600;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 50px;
     transition: var(--transition);
     cursor: pointer;
     border: none;
     font-size: var(--font-base);
     position: relative;
     overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Reduced Motion Support */
@@ -191,25 +162,29 @@ select:focus-visible {
 }
 
 .btn-primary {
-    background-color: var(--farm-green);
+    background: linear-gradient(135deg, var(--farm-green) 0%, #5a8c3b 100%);
     color: var(--white);
+    box-shadow: 0 4px 15px rgba(74, 124, 43, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: var(--farm-brown);
+    background: linear-gradient(135deg, #5a8c3b 0%, var(--farm-green) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 6px 20px rgba(74, 124, 43, 0.4);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--white);
     color: var(--farm-green);
     border: 2px solid var(--farm-green);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
     background-color: var(--farm-green);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 124, 43, 0.3);
 }
 
 /* Header */
@@ -284,11 +259,23 @@ select:focus-visible {
 /* Hero Section */
 .hero {
     padding: var(--space-3xl) 0;
-    background-color: var(--white);
+    background: linear-gradient(135deg, #f5fdf0 0%, #ffffff 100%);
     min-height: 80vh;
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(74, 124, 43, 0.05) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 /* Scroll-driven Animation for Hero */
@@ -317,6 +304,9 @@ select:focus-visible {
 .hero-title {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
+    font-size: var(--font-5xl);
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .highlight {
@@ -324,8 +314,10 @@ select:focus-visible {
 }
 
 .hero-description {
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     margin-bottom: var(--space-xl);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
 .hero-buttons {
@@ -394,12 +386,13 @@ select:focus-visible {
 
 .product-price {
     display: inline-block;
-    background-color: var(--farm-yellow);
+    background: linear-gradient(135deg, var(--farm-yellow) 0%, #f5b876 100%);
     color: var(--text-dark);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
     margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(244, 164, 96, 0.3);
 }
 
 .product-features {
