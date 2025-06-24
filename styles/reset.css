@@ -177,7 +177,4 @@ textarea:not([rows]) {
     min-height: 10em;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-    scroll-margin-block: 5ex;
-}
+/* Removed :target scroll-margin - handled in layout.css instead */

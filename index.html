@@ -238,29 +238,26 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
                 
-                if (targetId === '#hero') {
-                    // Scroll to top for hero/home
+                if (target) {
+                    // Get the header height
+                    const header = document.querySelector('.header');
+                    const headerHeight = header.offsetHeight;
+                    
+                    // Find the h2 title within the section
+                    const title = target.querySelector('h2');
+                    const elementToScroll = title || target;
+                    
+                    // Calculate the exact position
+                    const rect = elementToScroll.getBoundingClientRect();
+                    const absoluteTop = rect.top + window.pageYOffset;
+                    
+                    // Scroll to position minus header height
                     window.scrollTo({
-                        top: 0,
+                        top: absoluteTop - headerHeight,
                         behavior: 'smooth'
                     });
-                } else {
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        const headerHeight = document.querySelector('.header').offsetHeight;
-                        // Get the section title within the target section
-                        const sectionTitle = target.querySelector('.section-title, h2');
-                        const scrollTarget = sectionTitle || target;
-                        
-                        // Calculate position to put the title at the top of viewport
-                        const targetPosition = scrollTarget.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
                 }
             });
         });
