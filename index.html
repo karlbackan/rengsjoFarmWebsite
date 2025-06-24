@@ -399,6 +399,17 @@
             const headerHeight = header ? header.offsetHeight : 80;
             const offset = headerHeight + 20;
             
+            // Check if at top of page (for hero/home section)
+            if (scrollY < offset) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#hero') {
+                        link.classList.add('active');
+                    }
+                });
+                return;
+            }
+            
             // Check if at bottom of page
             if (scrollY + windowHeight >= documentHeight - 50) {
                 navLinks.forEach(link => {
