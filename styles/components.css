@@ -17,14 +17,16 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   width: 100%;
   height: 300px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.gallery-item.large img {
+.gallery-item.large img,
+.gallery-item.large video {
   height: 450px;
 }
 
@@ -33,7 +35,8 @@
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
 }
 
-.gallery-item:hover img {
+.gallery-item:hover img,
+.gallery-item:hover video {
   transform: scale(1.1);
 }
 
@@ -255,14 +258,99 @@
   font-weight: 500;
 }
 
+/* Gallery expand button */
+.gallery-expand-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-6) auto 0;
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid var(--color-sage);
+  border-radius: 30px;
+  color: var(--color-sage);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-expand-btn:hover {
+  background: var(--color-sage);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 132, 113, 0.2);
+}
+
+.expand-icon {
+  transition: transform 0.3s ease;
+}
+
+.gallery-expand-btn[aria-expanded="true"] .expand-icon {
+  transform: rotate(180deg);
+}
+
+.gallery-expand-btn[aria-expanded="true"] .expand-text {
+  content: "Visa mindre";
+}
+
+/* Hidden gallery items */
+.gallery-hidden {
+  display: none;
+}
+
+.gallery-expanded .gallery-hidden {
+  display: block;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Video items */
+.video-item {
+  position: relative;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.video-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-item.playing .video-play-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .gallery-item img,
-  .gallery-item.large img {
+  .gallery-item.large img,
+  .gallery-item video {
     height: 250px;
   }
   
   .product-card {
     padding: var(--space-3);
+  }
+  
+  .gallery-expand-btn {
+    font-size: 0.875rem;
+    padding: var(--space-2) var(--space-3);
   }
 }

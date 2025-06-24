@@ -29,6 +29,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#hero" class="logo-link no-select">
+                    <img src="sheep.png" alt="Rengsjö Farm" class="logo-image">
                     <h1 class="logo">Rengsjö Farm</h1>
                 </a>
                 <nav class="nav no-select" aria-label="Huvudnavigation">
@@ -55,7 +56,7 @@
         <section class="gallery" id="gallery">
             <div class="container">
                 <h2 class="section-title scroll-reveal">Så lever våra djur</h2>
-                <div class="gallery-grid animate-stagger">
+                <div class="gallery-grid animate-stagger" id="galleryGrid">
                     <figure class="gallery-item hover-lift image-overlay">
                         <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80" 
                              alt="Lamm på grön äng" 
@@ -80,7 +81,46 @@
                              loading="lazy">
                         <figcaption>Daglig tillsyn och omsorg</figcaption>
                     </figure>
+                    
+                    <!-- Hidden additional content -->
+                    <figure class="gallery-item hover-lift image-overlay gallery-hidden">
+                        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80" 
+                             alt="Höns på gården" 
+                             loading="lazy">
+                        <figcaption>Frigående höns</figcaption>
+                    </figure>
+                    <figure class="gallery-item hover-lift image-overlay video-item gallery-hidden">
+                        <video poster="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=800&q=80" 
+                               muted loop preload="none">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" aria-label="Spela video">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="23" fill="rgba(255,255,255,0.9)"/>
+                                <path d="M18 16L32 24L18 32V16Z" fill="var(--color-charcoal)"/>
+                            </svg>
+                        </button>
+                        <figcaption>Lammen leker på ängen</figcaption>
+                    </figure>
+                    <figure class="gallery-item hover-lift image-overlay gallery-hidden">
+                        <img src="https://images.unsplash.com/photo-1605092260886-f6e75ad22759?w=800&q=80" 
+                             alt="Sommardag på gården" 
+                             loading="lazy">
+                        <figcaption>Sommardag på betesmarken</figcaption>
+                    </figure>
+                    <figure class="gallery-item hover-lift image-overlay gallery-hidden">
+                        <img src="https://images.unsplash.com/photo-1574068468668-a05a11f871da?w=800&q=80" 
+                             alt="Vinterfoder" 
+                             loading="lazy">
+                        <figcaption>God omvårdnad året runt</figcaption>
+                    </figure>
                 </div>
+                <button class="gallery-expand-btn" id="galleryExpandBtn" aria-expanded="false">
+                    <span class="expand-text">Se mer från gården</span>
+                    <svg class="expand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 14L5 9L6.41 7.59L10 11.17L13.59 7.59L15 9L10 14Z" fill="currentColor"/>
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -209,7 +249,12 @@
                     const target = document.querySelector(targetId);
                     if (target) {
                         const headerHeight = document.querySelector('.header').offsetHeight;
-                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                        // Get the section title within the target section
+                        const sectionTitle = target.querySelector('.section-title, h2');
+                        const scrollTarget = sectionTitle || target;
+                        
+                        // Calculate position to put the title at the top of viewport
+                        const targetPosition = scrollTarget.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
                         
                         window.scrollTo({
                             top: targetPosition,
@@ -330,6 +375,75 @@
                 highlightNav();
             }, 10);
         }, { passive: true });
+        
+        // Gallery expand functionality
+        const galleryExpandBtn = document.getElementById('galleryExpandBtn');
+        const galleryGrid = document.getElementById('galleryGrid');
+        
+        galleryExpandBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            if (!isExpanded) {
+                galleryGrid.classList.add('gallery-expanded');
+                this.setAttribute('aria-expanded', 'true');
+                this.querySelector('.expand-text').textContent = 'Visa mindre';
+                
+                // Lazy load videos when expanding
+                const videos = galleryGrid.querySelectorAll('.gallery-hidden video');
+                videos.forEach(video => {
+                    video.preload = 'metadata';
+                });
+            } else {
+                galleryGrid.classList.remove('gallery-expanded');
+                this.setAttribute('aria-expanded', 'false');
+                this.querySelector('.expand-text').textContent = 'Se mer från gården';
+                
+                // Scroll back to gallery section
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Video play functionality
+        const videoItems = document.querySelectorAll('.video-item');
+        
+        videoItems.forEach(item => {
+            const video = item.querySelector('video');
+            const playBtn = item.querySelector('.video-play-btn');
+            
+            if (video && playBtn) {
+                // Play on button click
+                playBtn.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                        item.classList.add('playing');
+                    } else {
+                        video.pause();
+                        item.classList.remove('playing');
+                    }
+                });
+                
+                // Pause when video ends
+                video.addEventListener('ended', function() {
+                    item.classList.remove('playing');
+                });
+                
+                // Play on hover for desktop
+                if (window.matchMedia('(hover: hover)').matches) {
+                    item.addEventListener('mouseenter', function() {
+                        if (!item.classList.contains('playing')) {
+                            video.play();
+                        }
+                    });
+                    
+                    item.addEventListener('mouseleave', function() {
+                        if (!item.classList.contains('playing')) {
+                            video.pause();
+                            video.currentTime = 0;
+                        }
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>

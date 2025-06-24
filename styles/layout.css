@@ -39,6 +39,15 @@ section {
 .logo-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.logo-image {
+  height: 1.5rem; /* Same height as text */
+  width: auto;
+  transition: var(--transition-base);
 }
 
 .logo {
@@ -46,10 +55,16 @@ section {
   font-weight: 500;
   margin: 0;
   transition: var(--transition-base);
+  display: flex;
+  align-items: center;
 }
 
 .logo-link:hover .logo {
   color: var(--color-sage);
+}
+
+.logo-link:hover .logo-image {
+  opacity: 0.8;
 }
 
 /* Navigation */
@@ -101,6 +116,14 @@ section {
     gap: var(--space-2);
   }
   
+  .logo-image {
+    height: 1.25rem; /* Slightly smaller on mobile */
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
   .nav {
     gap: var(--space-3);
   }
@@ -148,6 +171,7 @@ section {
   background: var(--color-cream);
   position: relative;
   z-index: 2;
+  overflow: visible;
 }
 
 .gallery-grid {
