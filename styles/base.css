@@ -12,15 +12,9 @@ body {
   background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: var(--header-height); /* Dynamic header height */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding-top: 100px; /* More space for stacked mobile header */
-  }
 }
 
 /* Typography */

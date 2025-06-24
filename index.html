@@ -203,6 +203,58 @@
     </footer>
     
     <script>
+        // Dynamic header height calculation
+        function updateHeaderHeight() {
+            const header = document.querySelector('.header');
+            if (header) {
+                const headerHeight = header.offsetHeight;
+                const scrollOffset = 20; // Additional breathing room
+                
+                // Update CSS custom properties
+                document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+                document.documentElement.style.setProperty('--header-height-mobile', `${headerHeight}px`);
+                
+                // Update body padding-top to match actual header height
+                document.body.style.paddingTop = `${headerHeight}px`;
+            }
+        }
+        
+        // Call immediately when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateHeaderHeight);
+        } else {
+            updateHeaderHeight();
+        }
+        
+        // Call on load and resize
+        window.addEventListener('load', updateHeaderHeight);
+        window.addEventListener('resize', debounce(updateHeaderHeight, 250));
+        
+        // Watch for header changes (if content is dynamically added/removed)
+        const headerObserver = new MutationObserver(debounce(updateHeaderHeight, 100));
+        const header = document.querySelector('.header');
+        if (header) {
+            headerObserver.observe(header, { 
+                childList: true, 
+                subtree: true, 
+                attributes: true,
+                attributeFilter: ['style', 'class']
+            });
+        }
+        
+        // Debounce function for resize events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
         // Page loader
         window.addEventListener('load', function() {
             const loader = document.querySelector('.page-loader');
@@ -233,7 +285,7 @@
             imageObserver.observe(img);
         });
         
-        // Smooth scroll for navigation
+        // Smooth scroll for navigation with dynamic header offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -251,22 +303,34 @@
                 const target = document.querySelector(targetId);
                 
                 if (target) {
-                    // For gallery and products, scroll to the h2 title
+                    // Get current header height
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 80;
+                    const additionalOffset = 20; // Extra breathing room
+                    
+                    // Calculate the scroll position
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - additionalOffset;
+                    
+                    // For gallery and products, check if we should scroll to h2 instead
                     if (targetId === '#gallery' || targetId === '#products') {
                         const h2 = target.querySelector('h2');
                         if (h2) {
-                            h2.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
+                            const h2Position = h2.getBoundingClientRect().top + window.pageYOffset;
+                            const h2OffsetPosition = h2Position - headerHeight - additionalOffset;
+                            
+                            window.scrollTo({
+                                top: h2OffsetPosition,
+                                behavior: 'smooth'
                             });
                             return;
                         }
                     }
                     
-                    // For other sections, scroll to the section
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    // Scroll to calculated position
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -321,6 +385,11 @@
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
             
+            // Get current header height
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 80;
+            const offset = headerHeight + 20;
+            
             // Check if at bottom of page
             if (scrollY + windowHeight >= documentHeight - 50) {
                 navLinks.forEach(link => {
@@ -334,7 +403,7 @@
             
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - offset;
                 const sectionId = section.getAttribute('id');
                 
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {

@@ -49,6 +49,11 @@
   
   /* Transitions */
   --transition-base: all 0.2s ease;
+  
+  /* Header heights - dynamically set by JavaScript */
+  --header-height: 80px; /* Default desktop height */
+  --header-height-mobile: 100px; /* Default mobile height */
+  --scroll-offset: 20px; /* Additional breathing room */
 }
 
 /* Mobile adjustments */
@@ -57,5 +62,12 @@
     --font-size-2xl: 1.75rem;
     --font-size-3xl: 2rem;
     --container-padding: var(--space-3);
+  }
+}
+
+/* Dynamic header height for different screen sizes */
+@media (max-width: 600px) {
+  :root {
+    --header-height: var(--header-height-mobile);
   }
 }
