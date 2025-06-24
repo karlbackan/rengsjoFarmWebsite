@@ -317,12 +317,8 @@
                     const headerHeight = header ? header.offsetHeight : 80;
                     const additionalOffset = 20; // Extra breathing room
                     
-                    // Calculate the scroll position
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = targetPosition - headerHeight - additionalOffset;
-                    
-                    // For gallery and products, check if we should scroll to h2 instead
-                    if (targetId === '#gallery' || targetId === '#products') {
+                    // For gallery, products, and contact - scroll to h2 with margin
+                    if (targetId === '#gallery' || targetId === '#products' || targetId === '#contact') {
                         const h2 = target.querySelector('h2');
                         if (h2) {
                             const h2Position = h2.getBoundingClientRect().top + window.pageYOffset;
@@ -336,7 +332,10 @@
                         }
                     }
                     
-                    // Scroll to calculated position
+                    // For other sections, use default calculation
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - additionalOffset;
+                    
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
