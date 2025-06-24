@@ -17,6 +17,24 @@ body {
   -webkit-touch-callout: none;
 }
 
+/* Disable text selection on touch devices */
+@media (pointer: coarse) {
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Allow selection for form inputs */
+  input, textarea, [contenteditable] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-heading);
