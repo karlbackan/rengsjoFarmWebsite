@@ -511,3 +511,58 @@ if (document.readyState === 'loading') {
 } else {
     preloadCriticalResources();
 }
+
+// Scroll animations
+function initScrollAnimations() {
+    const animateElements = document.querySelectorAll('.section-header, .product-card, .feature-card, .blog-card, .season-item');
+    
+    animateElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+    });
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    animateElements.forEach(el => {
+        animateOnScroll.observe(el);
+    });
+}
+
+// Initialize scroll animations
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+// Add ripple effect to buttons
+function addRippleEffect() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', addRippleEffect);

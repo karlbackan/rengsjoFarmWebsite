@@ -9,7 +9,7 @@
     --farm-cream: #faf6f2;
     --farm-light-green: #8bc34a;
     --text-dark: #1a1a1a;
-    --text-light: #555;
+    --text-light: #333333;
     --white: #ffffff;
     --bg-primary: #ffffff;
     --bg-secondary: #faf6f2;
@@ -54,7 +54,7 @@
     --farm-cream: #2a2a2a;
     --farm-light-green: #9bd45a;
     --text-dark: #f0f0f0;
-    --text-light: #b0b0b0;
+    --text-light: #d0d0d0;
     --white: #1a1a1a;
     --bg-primary: #1a1a1a;
     --bg-secondary: #2a2a2a;
@@ -112,7 +112,7 @@ h3 { font-size: clamp(var(--font-lg), 3vw, var(--font-2xl)); }
 
 p {
     margin-bottom: var(--space-md);
-    color: var(--text-light);
+    color: var(--text-dark);
     text-wrap: pretty;
 }
 
@@ -318,6 +318,7 @@ select:focus-visible {
     margin-bottom: var(--space-xl);
     color: var(--text-dark);
     line-height: 1.6;
+    opacity: 0.87;
 }
 
 .hero-buttons {
@@ -346,7 +347,8 @@ select:focus-visible {
 
 .section-subtitle {
     font-size: 1.125rem;
-    color: var(--text-light);
+    color: var(--text-dark);
+    opacity: 0.8;
 }
 
 /* Products Section */
@@ -384,6 +386,14 @@ select:focus-visible {
     padding: 2rem;
 }
 
+.product-info h3 {
+    color: var(--text-dark);
+}
+
+.product-info p {
+    color: var(--text-dark);
+}
+
 .product-price {
     display: inline-block;
     background: linear-gradient(135deg, var(--farm-yellow) 0%, #f5b876 100%);
@@ -404,6 +414,7 @@ select:focus-visible {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: var(--text-dark);
 }
 
 .product-features li::before {
@@ -435,6 +446,7 @@ select:focus-visible {
 .about-description {
     font-size: 1.125rem;
     margin-bottom: 2rem;
+    color: var(--text-dark);
 }
 
 .about-features {
@@ -456,6 +468,10 @@ select:focus-visible {
 .feature-card h4 {
     color: var(--farm-green);
     margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text-dark);
 }
 
 .about-image img {
@@ -481,6 +497,7 @@ select:focus-visible {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 .info-icon {
@@ -499,6 +516,7 @@ select:focus-visible {
 
 .hours-table td {
     padding: 0.5rem 0;
+    color: var(--text-dark);
 }
 
 .hours-table td:first-child {
@@ -570,7 +588,7 @@ select:focus-visible {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #e0e0e0;
     line-height: 2;
 }
 
@@ -588,7 +606,7 @@ select:focus-visible {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid #444;
-    color: #999;
+    color: #b3b3b3;
 }
 
 /* Responsive Design */
@@ -740,7 +758,8 @@ select:focus-visible {
 
 .season-item p {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-dark);
+    opacity: 0.8;
 }
 
 /* Blog Section */
@@ -808,7 +827,7 @@ select:focus-visible {
 
 .blog-content p {
     margin-bottom: var(--space-md);
-    color: var(--text-light);
+    color: var(--text-dark);
     text-wrap: pretty;
 }
 
@@ -944,12 +963,282 @@ select:focus-visible {
     :root {
         --farm-green: #1a3a0a;
         --farm-brown: #6b3410;
-        --text-light: #333;
+        --text-light: #000;
         --shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     
     .btn {
         border: 2px solid currentColor;
+    }
+}
+
+/* Micro-interactions and Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes leafFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(5px) rotate(5deg);
+    }
+}
+
+/* Add micro-interactions to buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced hover effects */
+.product-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(74, 124, 43, 0.15);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-image {
+    overflow: hidden;
+}
+
+.product-image img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animate elements on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Logo animation */
+.logo i {
+    display: inline-block;
+    animation: leafFloat 3s ease-in-out infinite;
+}
+
+/* Nav link hover with underline animation */
+.nav-menu a {
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--farm-green);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu a:hover::before {
+    width: 100%;
+}
+
+/* Season tabs animation */
+.season-tab {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.season-tab:hover:not(.active) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.season-tab.active {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Blog card hover effect */
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.1);
+}
+
+.blog-image {
+    overflow: hidden;
+}
+
+.blog-image img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Feature card entrance animation */
+.feature-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Mobile Touch Target Improvements */
+@media (max-width: 768px) {
+    /* Minimum 48px touch targets */
+    .btn {
+        min-height: 48px;
+        padding: var(--space-md) var(--space-xl);
+    }
+    
+    .nav-menu a {
+        padding: 12px 16px;
+        display: block;
+    }
+    
+    .season-tab {
+        min-height: 48px;
+        padding: 12px 20px;
+    }
+    
+    /* Increase clickable area for links */
+    a {
+        position: relative;
+    }
+    
+    a::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+    }
+    
+    /* Better spacing for mobile forms */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        min-height: 48px;
+        padding: 12px 16px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Improved mobile navigation */
+    .mobile-menu-toggle {
+        min-width: 48px;
+        min-height: 48px;
+        padding: 12px;
+    }
+    
+    .nav-menu {
+        padding: var(--space-lg) 0;
+    }
+    
+    .nav-menu li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Better mobile card spacing */
+    .product-card,
+    .blog-card {
+        margin-bottom: var(--space-xl);
+    }
+    
+    /* Improved mobile hero */
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        gap: var(--space-md);
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        flex: 1;
+        max-width: 200px;
     }
 }
 
