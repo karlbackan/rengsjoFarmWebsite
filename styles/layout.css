@@ -89,6 +89,14 @@
 
 section {
     padding-block: var(--section-padding);
+    position: relative;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 768px) {
+    section {
+        padding-block: clamp(2rem, 8vw, 3rem);
+    }
 }
 
 /* Alternating section backgrounds */

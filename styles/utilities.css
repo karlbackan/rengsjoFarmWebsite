@@ -1,5 +1,31 @@
 /* Utility Classes - Reusable single-purpose classes */
 
+/* ===== SELECTION UTILITIES ===== */
+
+/* Prevent text selection on mobile drag */
+body {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background-color: var(--color-primary-alpha);
+    color: var(--color-text-primary);
+}
+
+::-moz-selection {
+    background-color: var(--color-primary-alpha);
+    color: var(--color-text-primary);
+}
+
+/* Disable selection during drag */
+.dragging * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
 /* ===== TEXT UTILITIES ===== */
 
 /* Text Color */

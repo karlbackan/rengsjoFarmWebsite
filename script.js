@@ -1,3 +1,36 @@
+// Dark Mode Toggle
+const themeToggle = document.getElementById('themeToggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+// Update icon based on theme
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+updateThemeIcon(currentTheme);
+
+// Theme toggle functionality
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    
+    // Announce theme change to screen readers
+    const announcement = newTheme === 'dark' ? 'Mörkt tema aktiverat' : 'Ljust tema aktiverat';
+    const liveRegion = document.getElementById('live-region');
+    if (liveRegion) {
+        liveRegion.textContent = announcement;
+    }
+});
+
 // Mobile Menu Toggle with Accessibility
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -5,17 +38,10 @@ const navMenu = document.getElementById('navMenu');
 if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener('click', () => {
         const isActive = navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
         
         // Update ARIA attributes
         mobileMenuToggle.setAttribute('aria-expanded', isActive);
-        
-        // Animate hamburger menu
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans.forEach((span, index) => {
-            span.style.transform = isActive 
-                ? index === 1 ? 'scale(0)' : index === 0 ? 'rotate(45deg) translateY(7px)' : 'rotate(-45deg) translateY(-7px)'
-                : '';
-        });
         
         // Trap focus when menu is open
         if (isActive) {
@@ -27,10 +53,9 @@ if (mobileMenuToggle && navMenu) {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
             mobileMenuToggle.focus();
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans.forEach(span => span.style.transform = '');
         }
     });
 }
@@ -40,9 +65,10 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         if (navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans.forEach(span => span.style.transform = '');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 });

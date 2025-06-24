@@ -1,0 +1,132 @@
+/* Print Styles - Optimized for printing */
+
+@media print {
+    /* Reset backgrounds and colors for print */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Page setup */
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+    
+    /* Basic elements */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        font-family: Georgia, serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Arial, sans-serif;
+        page-break-after: avoid;
+        margin-top: 1em;
+    }
+    
+    h1 { font-size: 24pt; }
+    h2 { font-size: 20pt; }
+    h3 { font-size: 16pt; }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+    }
+    
+    a[href^="#"]:after {
+        content: "";
+    }
+    
+    /* Hide non-essential elements */
+    .header,
+    .footer,
+    .mobile-menu-toggle,
+    .theme-toggle,
+    .hero-buttons,
+    .blog-section,
+    .social-links,
+    button,
+    form {
+        display: none !important;
+    }
+    
+    /* Show essential contact info */
+    .contact-info {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Product cards */
+    .product-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+    
+    /* Tables */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        text-align: left;
+    }
+    
+    /* Ensure content doesn't get cut off */
+    p, li, blockquote {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* Section breaks */
+    section {
+        page-break-before: always;
+    }
+    
+    section:first-child {
+        page-break-before: avoid;
+    }
+    
+    /* QR code placeholder for website URL */
+    .header::after {
+        content: "Besök oss på: rengsjofarm.se";
+        display: block;
+        font-size: 14pt;
+        margin: 1em 0;
+        text-align: center;
+        border: 2px solid #000;
+        padding: 1em;
+    }
+}
+
+/* High contrast mode for better readability */
+@media print and (prefers-contrast: high) {
+    * {
+        color: black !important;
+        background: white !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        border-bottom: 2px solid black;
+        padding-bottom: 0.2em;
+    }
+}
