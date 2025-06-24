@@ -61,14 +61,14 @@
 /* ===== ABOUT SECTION ===== */
 
 .about {
-    padding: var(--space-20) 0;
+    padding-block: var(--section-padding);
     background-color: var(--color-bg-primary);
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: var(--space-xl);
     align-items: center;
 }
 
@@ -119,7 +119,7 @@
 /* ===== SEASONAL SECTION ===== */
 
 .season-section {
-    padding: var(--space-20) 0;
+    padding-block: var(--section-padding);
     background-color: var(--color-bg-primary);
 }
 
@@ -212,7 +212,7 @@
 /* ===== BLOG SECTION ===== */
 
 .blog-section {
-    padding: var(--space-20) 0;
+    padding-block: var(--section-padding);
     background-color: var(--color-bg-secondary);
 }
 
@@ -292,14 +292,14 @@
 /* ===== CONTACT SECTION ===== */
 
 .contact {
-    padding: var(--space-20) 0;
+    padding-block: var(--section-padding);
     background-color: var(--color-bg-secondary);
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: var(--space-xl);
 }
 
 .info-item {

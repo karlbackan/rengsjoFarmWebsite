@@ -3,6 +3,7 @@
 /* Import design system */
 @import 'reset.css';
 @import 'tokens.css';
+@import 'layout.css';
 @import 'utilities.css';
 @import 'components.css';
 
@@ -33,7 +34,6 @@ h3 { font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl)); }
 
 p {
     color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
 }
 
 a {
@@ -184,23 +184,23 @@ a:hover {
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-xl);
 }
 
 .section-title {
     color: var(--color-text-primary);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-sm);
 }
 
 .section-subtitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--fs-lg);
     color: var(--color-text-secondary);
 }
 
 /* ===== PRODUCT CARDS ===== */
 
 .products {
-    padding: var(--space-16) 0;
+    padding-block: var(--section-padding);
     background-color: var(--color-bg-secondary);
 }
 
@@ -250,7 +250,6 @@ a:hover {
 
 .product-info p {
     color: var(--color-text-primary);
-    margin-bottom: var(--space-4);
 }
 
 .product-price {
