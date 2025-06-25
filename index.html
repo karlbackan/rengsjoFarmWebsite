@@ -294,7 +294,7 @@
             imageObserver.observe(img);
         });
         
-        // Smooth scroll for navigation with dynamic header offset
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -306,7 +306,6 @@
                         link.classList.remove('active');
                     });
                     this.classList.add('active');
-                    
                 }
                 
                 // Special handling for home/hero section
@@ -326,8 +325,11 @@
                     const headerHeight = header ? header.offsetHeight : 80;
                     const additionalOffset = 20; // Extra breathing room
                     
-                    // For gallery, products, and contact - scroll to h2 with margin
-                    if (targetId === '#gallery' || targetId === '#products' || targetId === '#contact') {
+                    // Check if mobile (max-width: 600px)
+                    const isMobile = window.innerWidth <= 600;
+                    
+                    if (isMobile && (targetId === '#gallery' || targetId === '#products' || targetId === '#contact')) {
+                        // Mobile: scroll to h2 headers like before
                         const h2 = target.querySelector('h2');
                         if (h2) {
                             const h2Position = h2.getBoundingClientRect().top + window.pageYOffset;
@@ -341,12 +343,12 @@
                         }
                     }
                     
-                    // For other sections, use default calculation
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = targetPosition - headerHeight - additionalOffset;
+                    // Desktop: scroll to section start
+                    const rect = target.getBoundingClientRect();
+                    const absoluteTop = rect.top + window.pageYOffset;
                     
                     window.scrollTo({
-                        top: offsetPosition,
+                        top: absoluteTop - headerHeight,
                         behavior: 'smooth'
                     });
                 }
