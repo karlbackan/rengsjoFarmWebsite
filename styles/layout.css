@@ -271,6 +271,8 @@ section h2 {
 .contact-hours {
   color: var(--color-warm-gray);
   font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--space-4);
 }
 
 /* Footer */
@@ -284,4 +286,21 @@ section h2 {
 .footer p {
   margin: 0;
   font-size: 0.875rem;
+}
+
+.footer-credit {
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.footer-link {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
