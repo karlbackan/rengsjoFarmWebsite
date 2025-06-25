@@ -442,7 +442,23 @@
   
   .product-card.compact {
     padding: var(--space-2);
-    aspect-ratio: 1 / 1.6;
+    aspect-ratio: auto;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .product-card.compact .product-header {
+    margin-bottom: var(--space-1);
+  }
+  
+  .product-card.compact .product-details {
+    margin: var(--space-1) 0;
+    flex-grow: 0;
+  }
+  
+  .product-card.compact .product-footer {
+    margin-top: var(--space-1);
+    padding-top: var(--space-1);
   }
   
   .gallery-expand-btn {
