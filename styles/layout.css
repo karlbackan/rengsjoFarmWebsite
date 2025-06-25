@@ -154,7 +154,7 @@ section h2 {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: var(--space-16) 0;
+  padding: var(--space-16) 0 var(--space-8) 0; /* Less padding at bottom */
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream) 100%);
   position: relative;
   overflow: hidden;
@@ -190,7 +190,6 @@ section h2 {
   position: relative;
   z-index: 2;
   overflow: visible;
-  padding-top: 0; /* Remove top padding */
 }
 
 .gallery-grid {
