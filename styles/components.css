@@ -319,16 +319,16 @@
   gap: var(--space-2);
   margin: var(--space-6) auto 0;
   padding: var(--space-2) var(--space-4);
-  min-width: 180px; /* Prevent shape change */
+  min-width: 200px; /* Prevent shape change */
   background: transparent;
   border: 1px solid var(--color-sage);
-  border-radius: 30px;
+  border-radius: 30px !important; /* Force rounded shape */
   color: var(--color-sage);
   font-size: var(--font-size-sm);
   font-weight: 500;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-expand-btn:hover {
@@ -340,6 +340,10 @@
 
 .expand-icon {
   transition: transform 0.3s ease;
+}
+
+.gallery-expand-btn[aria-expanded="true"] {
+  border-radius: 30px; /* Maintain rounded shape */
 }
 
 .gallery-expand-btn[aria-expanded="true"] .expand-icon {
