@@ -103,7 +103,7 @@
 /* Compact Product Cards */
 .product-card.compact {
   padding: var(--space-3);
-  aspect-ratio: 1 / 1.2;
+  aspect-ratio: 1 / 1.5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -439,7 +439,7 @@
   
   .product-card.compact {
     padding: var(--space-2);
-    aspect-ratio: 1 / 1.3;
+    aspect-ratio: 1 / 1.6;
   }
   
   .gallery-expand-btn {
