@@ -154,7 +154,7 @@ section h2 {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: var(--space-16) 0 var(--space-8) 0; /* Less padding at bottom */
+  padding: var(--space-12) 0; /* Equal padding top and bottom */
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream) 100%);
   position: relative;
   overflow: hidden;
