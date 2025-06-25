@@ -417,6 +417,12 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* Hide play button when hovering over video item */
+.video-item:hover .video-play-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .video-item.playing .video-play-btn {
   opacity: 0;
   pointer-events: none;
