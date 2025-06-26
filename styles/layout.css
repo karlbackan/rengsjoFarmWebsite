@@ -146,6 +146,51 @@ section h2 {
     margin-bottom: var(--space-1); /* Additional spacing as fallback */
   }
   
+  /* Remove click/tap highlighting on mobile */
+  .nav-link {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Remove focus outline on mobile */
+  .nav-link:focus {
+    outline: none;
+  }
+  
+  /* Remove active/focus states that cause highlighting */
+  .nav-link:active,
+  .nav-link:focus-visible {
+    color: var(--color-warm-gray);
+  }
+  
+  .nav-link:active::after,
+  .nav-link:focus-visible::after {
+    width: 0;
+  }
+  
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .nav-link:hover {
+      color: var(--color-warm-gray);
+    }
+    
+    .nav-link:hover::after {
+      width: 0;
+    }
+    
+    /* Only show active state based on scroll position */
+    .nav-link.active {
+      color: var(--color-sage);
+    }
+    
+    .nav-link.active::after {
+      width: 100%;
+      background: var(--color-sage);
+    }
+  }
+  
   .logo-image {
     height: 1.25rem; /* Slightly smaller on mobile */
   }
