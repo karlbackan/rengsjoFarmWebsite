@@ -1,5 +1,8 @@
 # SEO Next Steps for Rengsjö Farm
 
+## Important Note About Swedish Characters (å, ä, ö)
+Your domain **rengsjöfarm.se** (with ö) works perfectly for all SEO purposes. Google and all major Swedish services fully support Swedish characters. When registering your business anywhere, use the correct spelling with "ö". Google automatically understands that "rengsjö" and "rengsjo" are related and will show your site for both searches.
+
 ## Priority 1: Google Business Profile (Immediate Impact)
 
 ### Why It's Critical
@@ -15,7 +18,7 @@
 4. Address: **Östra Höle 9326, 821 98 Rengsjö**
 5. Category: Choose "Farm" or "Meat wholesaler"
 6. Add phone: **073-801 93 51**
-7. Add website: **https://rengsjofarm.se**
+7. Add website: **https://rengsjöfarm.se** (with ö - this works perfectly)
 8. Verify your business (Google will send a postcard with verification code)
 
 ### What to Add After Verification
@@ -39,9 +42,9 @@
 
 ### How to Set Up
 1. Go to [search.google.com/search-console](https://search.google.com/search-console)
-2. Add property: **https://rengsjofarm.se**
+2. Add property: **https://rengsjöfarm.se** (with ö)
 3. Verify ownership (multiple methods available)
-4. Submit sitemap: **https://rengsjofarm.se/sitemap.xml**
+4. Submit sitemap: **https://rengsjöfarm.se/sitemap.xml**
 
 ### What to Monitor
 - **Coverage**: Check all pages are indexed
@@ -77,7 +80,7 @@ Register your business on these sites (most are free):
 - Address: **Östra Höle 9326, 821 98 Rengsjö**
 - Phone: **073-801 93 51**
 - Email: **nina_backan@hotmail.com**
-- Website: **https://rengsjofarm.se**
+- Website: **https://rengsjöfarm.se**
 - Description: Focus on "familjeägd gård", "lammkött", "direktförsäljning"
 
 ## Priority 4: Add FAQ Section to Website
@@ -144,7 +147,7 @@ Create simple pages about:
 ### Monthly Checks
 - Google Search Console: Check impressions and clicks
 - Google Business Profile: Check views and calls
-- Search for "rengsjö farm" and "rengsjo farm" - see if you appear
+- Search for "rengsjö farm" and "rengsjo farm" - see if you appear (Google will show your site with ö for both searches)
 
 ### Success Metrics
 - Appearing on first page for "lammkött rengsjö"
