@@ -412,10 +412,25 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
+  /* Ensure adequate touch target size on mobile */
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .video-play-btn:hover {
   transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Improve touch feedback on mobile */
+@media (hover: none) {
+  .video-play-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
 }
 
 /* Hide play button when hovering over video item */

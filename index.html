@@ -74,7 +74,7 @@
                         <figcaption>Trygg uppväxt med närhet till sin mamma</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
-                        <video muted loop preload="metadata">
+                        <video muted loop preload="metadata" playsinline webkit-playsinline>
                             <source src="videos/fårpåbete.mp4#t=0.1" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
@@ -88,7 +88,7 @@
                     
                     <!-- Hidden additional content -->
                     <figure class="gallery-item hover-lift image-overlay video-item gallery-hidden">
-                        <video muted loop preload="metadata">
+                        <video muted loop preload="metadata" playsinline webkit-playsinline>
                             <source src="videos/nyföttlamm.mp4#t=0.1" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
@@ -568,14 +568,44 @@
             const playBtn = item.querySelector('.video-play-btn');
             
             if (video && playBtn) {
-                // Play on button click
-                playBtn.addEventListener('click', function() {
+                // Function to handle video play/pause
+                const toggleVideo = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
                     if (video.paused) {
-                        video.play();
-                        item.classList.add('playing');
+                        // Ensure video is loaded before playing
+                        video.load();
+                        const playPromise = video.play();
+                        
+                        if (playPromise !== undefined) {
+                            playPromise.then(() => {
+                                item.classList.add('playing');
+                            }).catch(error => {
+                                console.log('Video play failed:', error);
+                                // Try playing muted if autoplay policy blocks it
+                                video.muted = true;
+                                video.play().then(() => {
+                                    item.classList.add('playing');
+                                });
+                            });
+                        }
                     } else {
                         video.pause();
                         item.classList.remove('playing');
+                    }
+                };
+                
+                // Add both click and touch events for better mobile support
+                playBtn.addEventListener('click', toggleVideo);
+                playBtn.addEventListener('touchend', toggleVideo);
+                
+                // Also allow clicking on the video itself on mobile
+                video.addEventListener('click', toggleVideo);
+                video.addEventListener('touchend', function(e) {
+                    // Only toggle if the video is not playing via hover
+                    if (!window.matchMedia('(hover: hover)').matches) {
+                        toggleVideo(e);
                     }
                 });
                 
@@ -584,11 +614,13 @@
                     item.classList.remove('playing');
                 });
                 
-                // Play on hover for desktop
+                // Play on hover for desktop only
                 if (window.matchMedia('(hover: hover)').matches) {
                     item.addEventListener('mouseenter', function() {
                         if (!item.classList.contains('playing')) {
-                            video.play();
+                            video.play().catch(() => {
+                                // Ignore hover play errors
+                            });
                         }
                     });
                     
