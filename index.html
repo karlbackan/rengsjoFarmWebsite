@@ -489,13 +489,7 @@
                 const targetId = this.getAttribute('href');
                 
                 
-                // Immediately update active navigation
-                if (this.classList.contains('nav-link')) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
+                // Don't manually update active state - let scroll handler do it
                 
                 // Special handling for home/hero section
                 if (targetId === '#hero') {
