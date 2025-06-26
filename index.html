@@ -304,6 +304,7 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 
+                
                 // Immediately update active navigation
                 if (this.classList.contains('nav-link')) {
                     document.querySelectorAll('.nav-link').forEach(link => {
@@ -332,8 +333,9 @@
                     // Check if mobile (max-width: 600px)
                     const isMobile = window.innerWidth <= 600;
                     
+                    // Always scroll to h2 for these sections on mobile
                     if (isMobile && (targetId === '#gallery' || targetId === '#products' || targetId === '#contact')) {
-                        // Mobile: scroll to h2 headers like before
+                        // Mobile: scroll to h2 headers
                         const h2 = target.querySelector('h2');
                         if (h2) {
                             // Force update header height for mobile

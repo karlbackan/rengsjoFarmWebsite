@@ -256,10 +256,11 @@ section h2 {
   
   .hero-cta,
   .hero-cta-secondary {
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
     font-size: 0.875rem;
-    width: 100%;
+    flex: 1;
     justify-content: center;
+    min-width: 0;
   }
 }
 
