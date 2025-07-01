@@ -293,7 +293,6 @@
                     <a href="#hero" class="nav-link">Hem</a>
                     <a href="#gallery" class="nav-link">Våra djur</a>
                     <a href="#products" class="nav-link">Lammkött</a>
-                    <a href="#faq" class="nav-link">Frågor</a>
                     <a href="#contact" class="nav-link">Kontakt</a>
                 </nav>
             </div>
@@ -478,39 +477,6 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq" id="faq">
-            <div class="container">
-                <h2 class="section-title">Vanliga frågor om Rengsjö Farm</h2>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3 class="faq-question">Var ligger Rengsjö Farm?</h3>
-                        <p class="faq-answer">Vi finns på Östra Höle 9326, 821 98 Rengsjö i Hälsingland, Gävleborgs län. Gården ligger naturskönt belägen med naturliga betesmarker för våra lamm.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">Hur beställer jag lammkött?</h3>
-                        <p class="faq-answer">Ring oss på 073-801 93 51 eller maila till nina_backan@hotmail.com. Vi tar emot beställningar alla dagar och levererar färskt lammkött efter överenskommelse.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">När slaktas lammen?</h3>
-                        <p class="faq-answer">Våra lamm slaktas i början av oktober när de betat naturligt hela sommaren. Detta ger köttet den bästa smaken och kvaliteten.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">Kan jag hämta direkt på gården?</h3>
-                        <p class="faq-answer">Ja, du kan hämta din beställning direkt på gården utan extra kostnad. Vi levererar också i Hälsingland och till angränsande län vid större beställningar.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">Hur är lammen uppfödda?</h3>
-                        <p class="faq-answer">Våra lamm föds upp på naturliga betesmarker med fri rörlighet. De lever i flock och betar fritt på våra ängar. Vintertid har de rymliga stallar med lösdrift.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3 class="faq-question">Vad kostar vakuumpackning?</h3>
-                        <p class="faq-answer">Vakuumpackning kostar 250 kr per helt lamm eller 11 kr/kg för färs. Detta är en tilläggstjänst för längre hållbarhet i frysen.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="container">
@@ -661,7 +627,7 @@
                     const isMobile = window.innerWidth <= 600;
                     
                     // Always scroll to h2 for these sections on mobile
-                    if (isMobile && (targetId === '#gallery' || targetId === '#products' || targetId === '#faq' || targetId === '#contact')) {
+                    if (isMobile && (targetId === '#gallery' || targetId === '#products' || targetId === '#contact')) {
                         // Mobile: scroll to h2 headers
                         const h2 = target.querySelector('h2');
                         if (h2) {

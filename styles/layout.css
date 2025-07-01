@@ -414,28 +414,6 @@ section h2 {
   margin-top: var(--space-2);
 }
 
-/* FAQ Section */
-.faq {
-  background: var(--color-cream);
-}
-
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 768px) {
-  .faq-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-}
-
 /* Contact Section */
 .contact {
   background: var(--color-white);
