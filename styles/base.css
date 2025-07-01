@@ -92,6 +92,26 @@ a:hover {
   opacity: 0.7;
 }
 
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-sage);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Ensure minimum touch target size */
+a, button {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Images */
 img {
   max-width: 100%;

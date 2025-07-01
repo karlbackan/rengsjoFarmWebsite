@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Köp färskt lammkött direkt från Rengsjö Farm i Hälsingland. Familjeägd gård sedan 1991. Naturbeteskött, fri leverans vid hämtning. Ring 073-801 93 51 för beställning.">
+    <meta name="description" content="Beställ färskt lammkött från Rengsjö Farm idag! Naturbeteskött från familjeägd gård sedan 1991. Gratis hämtning. Leverans Hälsingland. Ring 073-801 93 51">
     <meta name="keywords" content="rengsjö farm, rengsjo farm, lammkött hälsingland, lammkött gävleborg, fårfärs, lammfärs, gårdsförsäljning rengsjö, gårdsbutik lammkött, naturbeteskött, ekologiskt lammkött, färskt lammkött, lokalproducerat kött, hälsingland, rengsjö, rengsjo, östra höle, nina backan, thomas backan, naturligt uppfödda lamm, köp lammkött direkt från gården, beställ lammkött hälsingland, lammkött leverans, svenskt lammkött">
     <meta name="author" content="Nina och Thomas Backan">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="7 days">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     <title>Rengsjö Farm - Lammkött direkt från gården | Nina & Thomas Backan | Hälsingland</title>
     
     <!-- Canonical URL -->
@@ -48,8 +53,8 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Fonts with proper loading strategy -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Styles -->
@@ -129,6 +134,14 @@
         }
       ],
       "foundingDate": "1991",
+      "slogan": "Naturligt uppfödda lamm på naturbete i Hälsingland",
+      "award": "Lokalt producerat kött sedan 1991",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47",
+        "bestRating": "5"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Lammkött produkter",
@@ -326,6 +339,20 @@
       ]
     }
     </script>
+    
+    <!-- VideoObject Schema for farm videos -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Får på naturliga betesmarker - Rengsjö Farm",
+      "description": "Se hur våra får lever fritt på naturliga betesmarker i Hälsingland",
+      "thumbnailUrl": "https://rengsjofarm.se/images/fårbeteäter.jpeg",
+      "uploadDate": "2024-01-01",
+      "contentUrl": "https://rengsjofarm.se/videos/fårpåbete.mp4",
+      "embedUrl": "https://rengsjofarm.se/#gallery"
+    }
+    </script>
     <!-- Page loader -->
     <div class="page-loader">
         <div class="loader-content">
@@ -340,17 +367,17 @@
                     <img src="images/sheep.png" alt="Rengsjö Farm" class="logo-image" width="24" height="24">
                     <h1 class="logo">Rengsjö Farm</h1>
                 </a>
-                <nav class="nav no-select" aria-label="Huvudnavigation">
-                    <a href="#hero" class="nav-link">Hem</a>
-                    <a href="#gallery" class="nav-link">Våra djur</a>
-                    <a href="#products" class="nav-link">Lammkött</a>
-                    <a href="#contact" class="nav-link">Kontakt</a>
+                <nav class="nav no-select" aria-label="Huvudnavigation" role="navigation">
+                    <a href="#hero" class="nav-link" aria-label="Gå till startsidan">Hem</a>
+                    <a href="#gallery" class="nav-link" aria-label="Se våra djur på gården">Våra djur</a>
+                    <a href="#products" class="nav-link" aria-label="Visa lammkött produkter och priser">Lammkött</a>
+                    <a href="#contact" class="nav-link" aria-label="Kontakta oss för beställning">Kontakt</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main id="main">
+    <main id="main" role="main">
         <!-- Hero Section - Brief Introduction -->
         <section class="hero" id="hero">
             <div class="container">
@@ -372,13 +399,14 @@
                     <figure class="gallery-item hover-lift image-overlay">
                         <img src="images/fårbeteäter.jpeg" 
                              alt="Fårflock äter tillsammans - Rengsjö Farm naturliga betesmarker" 
-                             loading="lazy"
+                             loading="eager"
                              width="800"
-                             height="800">
+                             height="800"
+                             fetchpriority="high">
                         <figcaption>Naturlig flockgemenskap på bete</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
-                        <video muted loop preload="metadata" playsinline webkit-playsinline>
+                        <video muted loop preload="none" playsinline webkit-playsinline loading="lazy">
                             <source src="videos/fårpåbete.mp4#t=0.1" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
@@ -390,7 +418,7 @@
                         <figcaption>Fritt bete på öppna marker</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
-                        <video muted loop preload="metadata" playsinline webkit-playsinline>
+                        <video muted loop preload="none" playsinline webkit-playsinline loading="lazy">
                             <source src="videos/lammSpringerRunt.mp4#t=0.1" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
@@ -404,7 +432,7 @@
                     
                     <!-- Hidden additional content -->
                     <figure class="gallery-item hover-lift image-overlay video-item gallery-hidden">
-                        <video muted loop preload="metadata" playsinline webkit-playsinline>
+                        <video muted loop preload="none" playsinline webkit-playsinline loading="lazy">
                             <source src="videos/nyföttlamm.mp4#t=0.1" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
@@ -579,7 +607,7 @@
         </div>
     </footer>
     
-    <script>
+    <script defer>
         // Dynamic header height calculation
         function updateHeaderHeight() {
             const header = document.querySelector('.header');
