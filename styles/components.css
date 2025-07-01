@@ -222,13 +222,13 @@
   font-size: 0.8125rem;
   color: var(--color-warm-gray);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6; /* Slightly more for small text - best practice */
 }
 
 .product-desc br {
   content: "";
   display: block;
-  margin-top: 0.5em;
+  margin-top: var(--space-1); /* 8px - follows 8pt grid */
 }
 
 .product-footer {
