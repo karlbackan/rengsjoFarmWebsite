@@ -45,15 +45,29 @@
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Critical CSS for faster first paint -->
+    <style>
+        body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding-top:80px;margin:0;background:#FDFBF7}
+        .header{position:fixed;top:0;left:0;right:0;background:#fff;z-index:100;padding:0.75rem 0;border-bottom:1px solid #e5e5e5}
+        .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+        @media(max-width:600px){body{padding-top:100px}}
+        .skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+        .skip-link:focus{position:static;width:auto;height:auto}
+    </style>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -128,21 +142,37 @@
               "@type": "Offer",
               "priceCurrency": "SEK",
               "availability": "https://schema.org/InStock",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "price": "Pris på förfrågan"
-              }
+              "price": "110",
+              "priceCurrency": "SEK",
+              "unitCode": "KGM"
             }
           },
           {
             "@type": "Product",
-            "name": "Slaktat, normalstyckat lamm",
-            "description": "Normalstyckat lamm (man väljer hel rygg eller kotletter)",
+            "name": "Slaktat, traditionellt styckat lamm",
+            "description": "Traditionellt styckat lamm (man väljer hel rygg eller kotletter)",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
-              "priceCurrency": "SEK",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "priceSpecification": {
+                "@type": "CompoundPriceSpecification",
+                "priceComponent": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "110",
+                    "priceCurrency": "SEK",
+                    "unitCode": "KGM",
+                    "name": "Kilopris"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "250",
+                    "priceCurrency": "SEK",
+                    "name": "Styckningsavgift"
+                  }
+                ]
+              }
             }
           },
           {
@@ -152,30 +182,51 @@
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
-              "priceCurrency": "SEK",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "priceSpecification": {
+                "@type": "CompoundPriceSpecification",
+                "priceComponent": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "110",
+                    "priceCurrency": "SEK",
+                    "unitCode": "KGM",
+                    "name": "Kilopris"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "400",
+                    "priceCurrency": "SEK",
+                    "name": "Styckningsavgift"
+                  }
+                ]
+              }
             }
           },
           {
             "@type": "Product",
             "name": "Lammfärs",
-            "description": "Färsk lammfärs",
+            "description": "Färsk lammfärs. Mildare smak. Packas i 500 grams vakuumpåsar",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "price": "200",
               "priceCurrency": "SEK",
-              "availability": "https://schema.org/InStock"
+              "unitCode": "KGM"
             }
           },
           {
             "@type": "Product",
             "name": "Fårfärs",
-            "description": "Färsk fårfärs",
+            "description": "Färsk fårfärs. Kraftigare smak. Packas i 500 grams vakuumpåsar",
             "category": "Fårkött",
             "offers": {
               "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "price": "150",
               "priceCurrency": "SEK",
-              "availability": "https://schema.org/InStock"
+              "unitCode": "KGM"
             }
           }
         ]
@@ -286,7 +337,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#hero" class="logo-link no-select">
-                    <img src="images/sheep.png" alt="Rengsjö Farm" class="logo-image">
+                    <img src="images/sheep.png" alt="Rengsjö Farm" class="logo-image" width="24" height="24">
                     <h1 class="logo">Rengsjö Farm</h1>
                 </a>
                 <nav class="nav no-select" aria-label="Huvudnavigation">
@@ -320,8 +371,10 @@
                 <div class="gallery-grid animate-stagger" id="galleryGrid">
                     <figure class="gallery-item hover-lift image-overlay">
                         <img src="images/fårbeteäter.jpeg" 
-                             alt="Fårflock äter tillsammans" 
-                             loading="lazy">
+                             alt="Fårflock äter tillsammans - Rengsjö Farm naturliga betesmarker" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Naturlig flockgemenskap på bete</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
@@ -364,38 +417,50 @@
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/ymir.jpeg" 
-                             alt="Gårdskatten Ymir" 
-                             loading="lazy">
+                             alt="Gårdskatten Ymir på Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Gårdskatten Ymir</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/cleoVaktarBur.jpeg" 
-                             alt="Cleo vaktar lammburen" 
-                             loading="lazy">
+                             alt="Gårdshunden Cleo vaktar fåren på Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Gårdshunden Cleo vaktar fåren</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/fårLösdriftAndraHållet.jpeg" 
-                             alt="Får på lösdrift från annat håll" 
-                             loading="lazy">
+                             alt="Får i vinterstall med lösdrift - Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Får i vinterstallet</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/fårPåLösDrift.jpeg" 
-                             alt="Får i lösdriftsstall" 
-                             loading="lazy">
+                             alt="Får i lösdriftsstall med fri rörlighet - Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Fritt val av vila och foder</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/tarFårUll.jpeg" 
-                             alt="Klippning av fårull" 
-                             loading="lazy">
+                             alt="Klippning av fårull för djurens välmående - Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Årlig klippning för djurens välmående</figcaption>
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay gallery-hidden">
                         <img src="images/fölcleo.jpeg" 
-                             alt="Föl vilar i stallet" 
-                             loading="lazy">
+                             alt="Gårdens hästar i tryggt stall - Rengsjö Farm" 
+                             loading="lazy"
+                             width="800"
+                             height="800">
                         <figcaption>Gårdens hästar i tryggt stall</figcaption>
                     </figure>
                 </div>
