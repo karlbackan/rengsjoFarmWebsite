@@ -9,18 +9,30 @@
    - **Why it's dead:** Google announced they don't use it at all
    - **What to do:** Delete it entirely
 
-2. **Keyword Stuffing**
+2. **Other Obsolete Meta Tags**
+   - **Meta Expiration/Date:** Defines page expiration - completely useless
+   - **Meta Copyright:** Redundant when copyright is in footer
+   - **Meta Distribution:** Always implied to be "global" for public pages
+   - **Meta Generator:** No SEO value whatsoever
+   - **Meta Revisit-After:** Search engines ignore this completely
+
+3. **Keyword Stuffing**
    - **Old way:** Repeat keywords in every possible variation
    - **Example:** "lammkött hälsingland, lammkött gävleborg, köp lammkött hälsingland"
    - **Why it's harmful:** Google penalizes over-optimization
+   - **Keyword Density Obsession:** The myth that 5% of text should be keywords
 
-3. **Exact Match Domains**
-   - **Old way:** buy-lamb-meat-halsingland.com
-   - **Modern way:** Your brand name (rengsjofarm.se)
+4. **Outdated Link Building**
+   - **Link Exchanges:** "Link to me and I'll link to you"
+   - **Buying Links:** Direct violation of Google guidelines
+   - **Comment Spam:** Posting links in blog comments
+   - **Low-Quality Directories:** Mass directory submissions
 
-4. **Hidden Text & Tricks**
-   - **Old way:** White text on white background, tiny fonts
-   - **Modern way:** All content visible and user-friendly
+5. **Content Manipulation**
+   - **Exact Match Domains:** buy-lamb-meat-halsingland.com
+   - **Hidden Text:** White text on white background
+   - **Doorway Pages:** Multiple pages targeting similar keywords
+   - **Dedicated Keyword Pages:** One page per keyword variation
 
 ### ✅ Modern SEO (2024-2025) - Best Practices
 
@@ -183,6 +195,50 @@ Instead of repeating "lammkött" 50 times, use:
 - Schema Validator (structured data)
 - Mobile-Friendly Test
 
+## Emerging SEO Techniques for 2025
+
+### 1. **AI Search & SGE (Search Generative Experience)**
+Google's SGE combines traditional results with AI-generated answers:
+- **Impact:** AI Overviews appear in ~13% of searches (up from 6% in Jan 2025)
+- **Strategy:** Optimize for featured snippets and direct answers
+- **Focus:** Clear, concise content that answers specific questions
+
+### 2. **Generative Engine Optimization (GEO)**
+New discipline focusing on AI citation optimization:
+- **Goal:** Get cited in ChatGPT, Claude, Gemini responses
+- **Techniques:** 
+  - Deep, authoritative content
+  - Strong trust signals
+  - Comprehensive schema markup
+  - Entity optimization
+  - Conversational query optimization
+
+### 3. **Topical Authority Development**
+Build comprehensive content clusters:
+- **Strategy:** Cover all aspects of your topic area
+- **Structure:** Hub-and-spoke content architecture
+- **Internal Linking:** Connect related content semantically
+- **Depth:** Answer related questions comprehensively
+
+### 4. **Entity-Based SEO**
+Search engines understand entities, not just keywords:
+- **Implementation:** Use JSON-LD structured data
+- **Relationships:** Define connections between entities
+- **Knowledge Graph:** Help Google understand your business entity
+
+### 5. **Cross-Platform Optimization**
+Search is fracturing across platforms:
+- **Traditional SERP:** Still important but not exclusive
+- **AI Assistants:** ChatGPT, Claude, Gemini
+- **Social Search:** TikTok, Instagram, YouTube
+- **Voice Search:** Alexa, Google Assistant, Siri
+
+### 6. **Predictive SEO with AI**
+AI tools can identify trends 4-6 weeks early:
+- **Monitor:** Social signals and news patterns
+- **Analyze:** Search correlation data
+- **Act:** Create content before trends peak
+
 ## Common Mistakes to Avoid
 
 1. **Over-optimization**
@@ -206,17 +262,125 @@ Instead of repeating "lammkött" 50 times, use:
 
 If your content is genuinely helpful, clearly written, and provides value to real people, search engines will reward you. The days of tricking Google are over - focus on being the best answer to your users' questions.
 
-## Quick Checklist for 2024 SEO
+## SEO Penalties in 2024-2025
 
-- [ ] Remove keywords meta tag
-- [ ] Natural, readable content
-- [ ] Fast loading (< 3 seconds)
-- [ ] Mobile-friendly design
-- [ ] Structured data implemented
-- [ ] Google Business Profile active
-- [ ] Core Web Vitals optimized
-- [ ] Accessible to all users
-- [ ] Fresh, valuable content
-- [ ] Local citations consistent
+### Types of Google Penalties
 
-Remember: SEO is now about providing the best user experience, not gaming the system.
+1. **Manual Actions**
+   - Issued by human reviewers
+   - Visible in Search Console
+   - Require reconsideration request
+   - Common triggers: Unnatural links, thin content, cloaking
+
+2. **Algorithmic Penalties**
+   - Automated by algorithm updates
+   - No notification from Google
+   - Recovery requires fixing issues and waiting
+   - Major 2024 updates: March (45 days), August, November, December
+
+### What Triggers Penalties in 2025
+
+#### 1. **AI Content Spam**
+- **Mass-produced AI content** without quality control
+- **Spammy AI content** created solely to manipulate rankings
+- **Key:** Google doesn't penalize AI content - it penalizes bad content
+- **Safe approach:** Human oversight, E-E-A-T standards, genuine value
+
+#### 2. **Content Quality Issues**
+- **Thin content:** Little to no added value
+- **Duplicate content:** Copied from other sources
+- **Doorway pages:** Multiple similar pages for keywords
+- **Auto-generated content:** Without human review
+
+#### 3. **Link Spam**
+- **Toxic backlinks:** From spam sites or link farms
+- **Paid links:** Buying or selling links
+- **Link exchanges:** Reciprocal linking schemes
+- **Comment spam:** Links in blog comments
+
+#### 4. **Technical Violations**
+- **Cloaking:** Different content for users vs. crawlers
+- **Hidden text:** Text invisible to users
+- **Keyword stuffing:** Unnatural keyword repetition
+- **Malicious behavior:** Malware, phishing, deceptive redirects
+
+#### 5. **Site Reputation Abuse**
+- **Parasite SEO:** Using established domains to manipulate rankings
+- **Third-party content:** Without proper oversight
+- **Sponsored content:** Not properly disclosed
+
+### March 2024 Core Update Impact
+- Largest core update in Google's history
+- 45% reduction in low-quality content
+- Mass deindexing of AI spam sites
+- Focus on "people-first" content
+
+### How to Avoid Penalties
+
+1. **Content Strategy**
+   - Create original, helpful content
+   - Focus on user intent, not keywords
+   - Implement E-E-A-T principles
+   - Regular quality audits
+
+2. **AI Content Guidelines**
+   - Always review and edit AI output
+   - Add unique insights and expertise
+   - Ensure factual accuracy
+   - Maintain consistent quality
+
+3. **Link Building**
+   - Earn links naturally through quality
+   - Avoid link schemes entirely
+   - Monitor backlink profile regularly
+   - Disavow toxic links promptly
+
+4. **Technical Compliance**
+   - Follow Google Search Essentials
+   - Maintain clean code and structure
+   - Ensure mobile-first design
+   - Monitor Core Web Vitals
+
+### Recovery from Penalties
+
+1. **Manual Actions:**
+   - Check Search Console immediately
+   - Fix all identified issues
+   - Submit reconsideration request
+   - Wait for Google's response
+
+2. **Algorithmic Penalties:**
+   - Identify drop date and correlate with updates
+   - Audit content quality thoroughly
+   - Remove or improve low-quality pages
+   - Wait for next algorithm refresh
+
+## Quick Checklist for 2025 SEO
+
+### Essential Tasks
+- [ ] Remove ALL obsolete meta tags (keywords, revisit-after, etc.)
+- [ ] Natural, readable content focused on user intent
+- [ ] Fast loading (< 2.5s LCP, < 200ms INP)
+- [ ] Mobile-first responsive design
+- [ ] Comprehensive structured data (JSON-LD)
+- [ ] Google Business Profile optimized
+- [ ] Core Web Vitals green scores
+
+### Modern SEO Priorities
+- [ ] Entity-based optimization implemented
+- [ ] Content clusters for topical authority
+- [ ] AI-friendly content structure (GEO)
+- [ ] Cross-platform presence (SERP, AI, Social)
+- [ ] E-E-A-T signals throughout site
+- [ ] Regular content quality audits
+- [ ] Backlink profile monitoring
+
+### Penalty Prevention
+- [ ] No keyword stuffing or over-optimization
+- [ ] All AI content human-reviewed
+- [ ] No toxic backlinks or link schemes
+- [ ] No duplicate or thin content
+- [ ] Technical compliance verified
+- [ ] Search Console monitored weekly
+
+Remember: Modern SEO is about being the most helpful, trustworthy answer to user questions across all platforms where people search.
