@@ -37,6 +37,7 @@
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/jxl "access plus 1 year"
     
     # Video
     ExpiresByType video/mp4 "access plus 1 year"
@@ -86,17 +87,42 @@
     
     # Basic CSP for XSS protection
     Header set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-ancestors 'none';"
+    
+    # Enable HTTP/3 support
+    Header set Alt-Svc 'h3=":443"; ma=86400'
+    
+    # Early Hints for critical resources
+    Header set Link "</styles/main.css>; rel=preload; as=style, </images/fårbeteäter.jpeg>; rel=preload; as=image"
+    
+    # Modern content types
+    ExpiresByType application/manifest+json "access plus 1 week"
+    ExpiresByType application/ld+json "access plus 1 week"
+</IfModule>
+
+# Additional performance optimizations
+<IfModule mod_headers.c>
+    # Enable keep-alive
+    Header set Connection keep-alive
+    
+    # ETags for better caching
+    FileETag MTime Size
+    
+    # Cache-Control for static assets
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|js|css|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
 </IfModule>
 
 # Custom error pages
 ErrorDocument 404 /404.html
 
-# Redirect www to non-www (or vice versa)
-# RewriteEngine On
-# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Force HTTPS and redirect www to non-www
+RewriteEngine On
 
 # Force HTTPS
-# RewriteEngine On
-# RewriteCond %{HTTPS} !=on
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]

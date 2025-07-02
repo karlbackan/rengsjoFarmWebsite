@@ -1,5 +1,5 @@
 # Robots.txt for Rengsjö Farm
-# https://rengsjofarm.se
+# https://rengsjöfarm.se
 
 User-agent: *
 Allow: /
@@ -29,7 +29,7 @@ User-agent: MJ12bot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://rengsjofarm.se/sitemap.xml
+Sitemap: https://rengsjöfarm.se/sitemap.xml
 
 # Host directive (for Yandex)
-Host: https://rengsjofarm.se
+Host: https://rengsjöfarm.se

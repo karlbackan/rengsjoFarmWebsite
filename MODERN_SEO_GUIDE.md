@@ -384,3 +384,39 @@ If your content is genuinely helpful, clearly written, and provides value to rea
 - [ ] Search Console monitored weekly
 
 Remember: Modern SEO is about being the most helpful, trustworthy answer to user questions across all platforms where people search.
+
+## Language Guidelines for Swedish Local Business
+
+### Schema.org Language Rules
+
+1. **Property Names Stay English**
+   - Correct: `"@type": "LocalBusiness"`
+   - Wrong: `"@typ": "LokalFöretag"`
+   - Schema.org properties are standardized in English globally
+
+2. **Values Should Be Swedish**
+   - Correct: `"name": "Rengsjö Farm"`
+   - Correct: `"description": "Familjeägd gård i Hälsingland"`
+   - Wrong: `"description": "Family-owned farm in Hälsingland"`
+
+3. **Language Codes**
+   - Use `"sv"` or `"sv-SE"` for Swedish
+   - Add `"inLanguage": "sv"` to specify content language
+   - Remove `"knowsLanguage"` unless you serve multiple languages
+
+4. **Hreflang for Swedish Sites**
+   ```html
+   <html lang="sv">
+   <link rel="alternate" hreflang="sv-SE" href="https://example.se/">
+   ```
+
+5. **Meta Tags**
+   - `<meta property="og:locale" content="sv_SE">`
+   - All descriptions in Swedish
+   - Technical attributes (property, content, name) stay English
+
+### Common Mistakes to Avoid
+- ❌ Translating schema.org types: `"@type": "LokalFöretag"`
+- ❌ Using full language names: `"knowsLanguage": ["Swedish"]`
+- ❌ Mixing languages in content: "Family-owned gård since 1991"
+- ✅ Keep technical terms English, content Swedish

@@ -3,20 +3,54 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://rengsjofarm.se/</loc>
+        <loc>https://rengsjöfarm.se/</loc>
         <lastmod>2025-01-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://rengsjofarm.se/images/fårbeteäter.jpeg</image:loc>
+            <image:loc>https://rengsjöfarm.se/images/fårbeteäter.jpeg</image:loc>
             <image:title>Fårflock på naturliga betesmarker - Rengsjö Farm</image:title>
             <image:caption>Naturlig flockgemenskap på bete</image:caption>
         </image:image>
         <video:video>
-            <video:content_loc>https://rengsjofarm.se/videos/fårpåbete.mp4</video:content_loc>
-            <video:thumbnail_loc>https://rengsjofarm.se/images/fårbeteäter.jpeg</video:thumbnail_loc>
+            <video:content_loc>https://rengsjöfarm.se/videos/fårpåbete.mp4</video:content_loc>
+            <video:thumbnail_loc>https://rengsjöfarm.se/images/fårbeteäter.jpeg</video:thumbnail_loc>
             <video:title>Får på naturliga betesmarker - Rengsjö Farm</video:title>
             <video:description>Se hur våra får lever fritt på naturliga betesmarker i Hälsingland</video:description>
         </video:video>
+    </url>
+    
+    <!-- Section URLs for better crawlability -->
+    <url>
+        <loc>https://rengsjöfarm.se/#gallery</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://rengsjöfarm.se/images/fårbeteäter.jpeg</image:loc>
+            <image:title>Våra djur - Rengsjö Farm</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://rengsjöfarm.se/#products</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://rengsjöfarm.se/#contact</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Additional resources -->
+    <url>
+        <loc>https://rengsjöfarm.se/indexnow.json</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
     </url>
 </urlset>

@@ -328,11 +328,11 @@ const videoObserver = new IntersectionObserver((entries) => {
     "@type": "ImageGallery",
     "name": "Rengsjö Farm - Våra djur",
     "description": "Se hur våra lamm och får lever på naturliga betesmarker",
-    "url": "https://rengsjofarm.se/#gallery",
+    "url": "https://rengsjöfarm.se/#gallery",
     "image": [
         {
             "@type": "ImageObject",
-            "contentUrl": "https://rengsjofarm.se/images/summer-lambs.jpg",
+            "contentUrl": "https://rengsjöfarm.se/images/summer-lambs.jpg",
             "description": "Lamm på sommarbete",
             "name": "Sommarlamm 2024"
         }
@@ -343,8 +343,8 @@ const videoObserver = new IntersectionObserver((entries) => {
 
 ### Meta Tags
 ```html
-<meta property="og:image" content="https://rengsjofarm.se/images/farm-hero.jpg">
-<meta property="og:video" content="https://rengsjofarm.se/videos/farm-life.mp4">
+<meta property="og:image" content="https://rengsjöfarm.se/images/farm-hero.jpg">
+<meta property="og:video" content="https://rengsjöfarm.se/videos/farm-life.mp4">
 ```
 
 ## Testing Checklist

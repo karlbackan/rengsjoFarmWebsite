@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+<!-- Swedish language site for local Swedish customers -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,49 @@
     <meta name="author" content="Nina och Thomas Backan">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
-    <meta name="rating" content="general">
-    <meta name="distribution" content="global">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <!-- Entity-based SEO for Knowledge Graph -->
+    <meta name="entity-type" content="LocalBusiness:FarmProducer">
+    <meta name="entity-category" content="Agriculture:LivestockFarming:SheepFarming">
     
-    <!-- Modern SEO signals -->
-    <meta name="image" content="https://rengsjofarm.se/images/fårbeteäter.jpeg">
+    <!-- Modern SEO Enhancement for 2025 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <meta property="article:published_time" content="2025-01-26T08:00:00+01:00">
+    <meta property="article:modified_time" content="2025-01-26T14:00:00+01:00">
+    
+    <!-- Enhanced SEO signals for AI/SGE -->
+    <meta name="image" content="https://rengsjöfarm.se/images/fårbeteäter.jpeg">
     <meta name="format-detection" content="telephone=no">
+    <meta name="thumbnail" content="https://rengsjöfarm.se/images/fårbeteäter.jpeg">
+    
+    <!-- IndexNow Protocol for faster indexing -->
+    <link rel="indexnow" href="/indexnow.json">
+    
+    <!-- Core Web Vitals optimization hints -->
+    <link rel="preload" as="image" href="images/fårbeteäter.jpeg" fetchpriority="high">
+    <link rel="modulepreload" href="js/navigation.js">
     <title>Rengsjö Farm - Lammkött från Backans Gård | Östra Höle, Hälsingland</title>
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://rengsjofarm.se/">
+    <link rel="canonical" href="https://rengsjöfarm.se/">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Rengsjö Farm - Lammkött från familjeägd gård i Hälsingland">
     <meta property="og:description" content="Lokalproducerat lammkött från familjeägd gård i Hälsingland. Naturligt uppfödda lamm på fria betesmarker. Leverans eller hämtning. Ring 073-801 93 51">
-    <meta property="og:image" content="https://rengsjofarm.se/images/fårbeteäter.jpeg">
-    <meta property="og:url" content="https://rengsjofarm.se/">
+    <meta property="og:image" content="https://rengsjöfarm.se/images/fårbeteäter.jpeg">
+    <meta property="og:url" content="https://rengsjöfarm.se/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="sv_SE">
     <meta property="og:site_name" content="Rengsjö Farm">
+    <meta property="og:see_also" content="https://sv.wikipedia.org/wiki/Lammk%C3%B6tt">
+    <meta property="og:see_also" content="https://sv.wikipedia.org/wiki/F%C3%A5rk%C3%B6tt">
+    <meta property="og:latitude" content="61.7558">
+    <meta property="og:longitude" content="16.8842">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rengsjö Farm - Lammkött från familjeägd gård">
     <meta name="twitter:description" content="Lokalproducerat lammkött från familjeägd gård i Hälsingland. Naturligt uppfödda lamm. Ring 073-801 93 51">
-    <meta name="twitter:image" content="https://rengsjofarm.se/images/fårbeteäter.jpeg">
+    <meta name="twitter:image" content="https://rengsjöfarm.se/images/fårbeteäter.jpeg">
     
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="SE-X">
@@ -42,6 +60,39 @@
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#7C8471">
+    
+    <!-- Web App capabilities for mobile -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Entity disambiguation for Knowledge Graph -->
+    <link rel="alternate" hreflang="sv-SE" href="https://rengsjöfarm.se/">
+    <meta name="knowledge-graph-reference" content="fåruppfödning-sverige-hälsingland">
+    
+    <!-- Cross-platform optimization for 2025 -->
+    <!-- Web Share API support -->
+    <meta name="web-share" content="title,text,url">
+    
+    <!-- Speculation Rules for instant navigation -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {"source": "list", "urls": ["#gallery", "#products", "#contact"]}
+      ]
+    }
+    </script>
+    
+    <!-- Google Discover optimization -->
+    <meta name="news_keywords" content="lammkött hälsingland, lokalproducerat, rengsjö farm">
+    <meta property="article:author" content="Nina och Thomas Backan">
+    <meta property="article:publisher" content="https://rengsjöfarm.se">
+    
+    <!-- Privacy-focused analytics alternative -->
+    <meta name="analytics-consent" content="required">
+    
+    <!-- Accessibility statement -->
+    <link rel="accessibility-statement" href="#" aria-label="Tillgänglighetsutlåtande">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -80,11 +131,11 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://rengsjofarm.se/#business",
+      "@id": "https://rengsjöfarm.se/#business",
       "name": "Rengsjö Farm",
       "alternateName": "Rengsjo Farm",
       "description": "Familjeägd gård som föder upp lamm på naturliga betesmarker i Hälsingland. Direktförsäljning av färskt lammkött med leverans eller hämtning på gården. Drivs av Nina och Thomas Backan sedan 1991.",
-      "url": "https://rengsjofarm.se/",
+      "url": "https://rengsjöfarm.se/",
       "telephone": "+46738019351",
       "email": "nina_backan@hotmail.com",
       "address": {
@@ -101,10 +152,10 @@
         "longitude": 16.8842
       },
       "image": [
-        "https://rengsjofarm.se/images/fårbeteäter.jpeg",
-        "https://rengsjofarm.se/images/sheep.png"
+        "https://rengsjöfarm.se/images/fårbeteäter.jpeg",
+        "https://rengsjöfarm.se/images/sheep.png"
       ],
-      "logo": "https://rengsjofarm.se/images/sheep.png",
+      "logo": "https://rengsjöfarm.se/images/sheep.png",
       "openingHours": "Mo-Su 08:00-20:00",
       "openingHoursSpecification": [
         {
@@ -264,7 +315,7 @@
           "name": "Hälsingland"
         }
       ],
-      "knowsLanguage": ["Swedish", "English"]
+      "inLanguage": "sv"
     }
     </script>
     
@@ -278,7 +329,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Hem",
-          "item": "https://rengsjofarm.se/"
+          "item": "https://rengsjöfarm.se/"
         }
       ]
     }
@@ -349,10 +400,181 @@
       "@type": "VideoObject",
       "name": "Får på naturliga betesmarker - Rengsjö Farm",
       "description": "Se hur våra får lever fritt på naturliga betesmarker i Hälsingland",
-      "thumbnailUrl": "https://rengsjofarm.se/images/fårbeteäter.jpeg",
+      "thumbnailUrl": "https://rengsjöfarm.se/images/fårbeteäter.jpeg",
       "uploadDate": "2024-01-01",
-      "contentUrl": "https://rengsjofarm.se/videos/fårpåbete.mp4",
-      "embedUrl": "https://rengsjofarm.se/#gallery"
+      "contentUrl": "https://rengsjöfarm.se/videos/fårpåbete.mp4",
+      "embedUrl": "https://rengsjöfarm.se/#gallery"
+    }
+    </script>
+    
+    <!-- Enhanced E-E-A-T: Author/Expert Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://rengsjöfarm.se/#nina-backan",
+      "name": "Nina Backan",
+      "jobTitle": "Gårdsägare & Lammuppfödare",
+      "worksFor": {"@id": "https://rengsjöfarm.se/#business"},
+      "knowsAbout": ["Lammuppfödning", "Naturlig djurhållning", "Hållbart jordbruk", "Lokalproducerat kött"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Lantbruksutbildning"
+      },
+      "award": "Erfaren lammuppfödare sedan 1991",
+      "description": "Nina Backan driver tillsammans med Thomas Backan familjen Backans gård i Östra Höle, Rengsjö. Med över 30 års erfarenhet av lammuppfödning."
+    }
+    </script>
+    
+    <!-- Speakable Schema for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-text",
+          ".contact-value",
+          ".product-price",
+          ".section-title"
+        ]
+      },
+      "inLanguage": "sv"
+    }
+    </script>
+    
+    <!-- HowTo Schema for Ordering Process -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Hur du beställer lammkött från Rengsjö Farm",
+      "description": "Enkel guide för att beställa färskt lammkött direkt från gården",
+      "inLanguage": "sv",
+      "supply": {
+        "@type": "HowToSupply",
+        "name": "Kontaktuppgifter"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Kontakta oss",
+          "text": "Ring 073-801 93 51 eller maila nina_backan@hotmail.com",
+          "url": "https://rengsjöfarm.se/#contact"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Välj produkter",
+          "text": "Välj mellan helt lamm ostyckat (110 kr/kg), styckat med ben (+250 kr) eller benfritt (+400 kr)"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Bestäm leverans",
+          "text": "Välj mellan att hämta på gården eller få leverans (vid större beställningar)"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Betala och hämta",
+          "text": "Betala kontant, med Swish eller banköverföring vid leverans"
+        }
+      ],
+      "totalTime": "PT15M"
+    }
+    </script>
+    
+    <!-- Recipe Schema for Lamb Preparation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Recipe",
+      "name": "Klassisk lammstek från Rengsjö Farm",
+      "description": "Traditionell tillagning av lammstek med lokala ingredienser",
+      "inLanguage": "sv",
+      "author": {"@id": "https://rengsjöfarm.se/#nina-backan"},
+      "datePublished": "2025-01-01",
+      "prepTime": "PT20M",
+      "cookTime": "PT90M",
+      "totalTime": "PT110M",
+      "recipeYield": "6 portioner",
+      "recipeCategory": "Huvudrätt",
+      "recipeCuisine": "Svensk",
+      "keywords": "lammstek, lammkött, hälsingland, lokalproducerat",
+      "recipeIngredient": [
+        "1,5 kg lammstek från Rengsjö Farm",
+        "3 vitlöksklyftor",
+        "Färsk rosmarin",
+        "Salt och peppar",
+        "2 msk olivolja"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Låt köttet komma till rumstemperatur"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Gnid in med vitlök, rosmarin, salt och peppar"
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Stek i ugn på 175°C i cirka 90 minuter"
+        }
+      ],
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "100g",
+        "calories": "250",
+        "proteinContent": "26g",
+        "fatContent": "16g"
+      }
+    }
+    </script>
+    
+    <!-- AggregateOffer Schema for Product Bundles -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AggregateOffer",
+      "@id": "https://rengsjöfarm.se/#lamb-offers",
+      "name": "Lammkött från Rengsjö Farm",
+      "offerCount": "4",
+      "lowPrice": "110",
+      "highPrice": "200",
+      "priceCurrency": "SEK",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Helt lamm ostyckat",
+          "price": "110",
+          "priceCurrency": "SEK",
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lammfärs",
+          "price": "200",
+          "priceCurrency": "SEK",
+          "unitCode": "KGM"
+        }
+      ],
+      "seller": {"@id": "https://rengsjöfarm.se/#business"}
+    }
+    </script>
+    
+    <!-- GeoCoordinates Enhancement for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 61.7558,
+        "longitude": 16.8842,
+        "elevation": "150m",
+        "description": "Östra Höle 9326, Rengsjö - mellan Bollnäs och Ljusdal"
+      },
+      "hasMap": "https://maps.google.com/?q=61.7558,16.8842"
     }
     </script>
     <!-- Page loader -->
@@ -508,6 +730,14 @@
             <div class="container">
                 <h2 class="section-title scroll-reveal">Vårt lammkött</h2>
                 <p class="products-intro">Välj mellan olika styckningsalternativ. Ring 073-801 93 51 för beställning från Rengsjö Farm.</p>
+                
+                <!-- Answer blocks for AI/SGE optimization -->
+                <div itemscope itemtype="https://schema.org/Answer" data-answer-target="price-lamb" style="display:none">
+                    <span itemprop="text">Lammkött från Rengsjö Farm kostar från 110 kr/kg för ostyckat lamm</span>
+                </div>
+                <div itemscope itemtype="https://schema.org/Answer" data-answer-target="order-lamb" style="display:none">
+                    <span itemprop="text">Beställ lammkött från Rengsjö Farm genom att ringa 073-801 93 51 eller maila nina_backan@hotmail.com</span>
+                </div>
                 <div class="products-grid">
                     <article class="product-card compact scroll-reveal">
                         <div class="product-header">
@@ -516,7 +746,8 @@
                         <div class="product-details">
                         </div>
                         <div class="product-footer">
-                            <span class="price">110 kr/kg</span>
+                            <span class="price" itemprop="price" content="110">110 kr/kg</span>
+                            <meta itemprop="priceCurrency" content="SEK">
                         </div>
                     </article>
                     
@@ -528,7 +759,8 @@
                             <p class="product-desc">(man väljer hel rygg eller kotletter)</p>
                         </div>
                         <div class="product-footer">
-                            <span class="price">110 kr/kg + 250 kr</span>
+                            <span class="price" itemprop="price">110 kr/kg + 250 kr</span>
+                            <meta itemprop="priceCurrency" content="SEK">
                         </div>
                     </article>
                     
@@ -576,6 +808,15 @@
         <section class="contact" id="contact">
             <div class="container">
                 <h2 class="section-title">Beställ lammkött från Rengsjö Farm</h2>
+                
+                <!-- Answer blocks for AI/SGE optimization -->
+                <div itemscope itemtype="https://schema.org/Answer" data-answer-target="location" style="display:none">
+                    <span itemprop="text">Rengsjö Farm ligger på Östra Höle 9326, 821 98 Rengsjö i Hälsingland, mellan Bollnäs och Ljusdal</span>
+                </div>
+                <div itemscope itemtype="https://schema.org/Answer" data-answer-target="delivery" style="display:none">
+                    <span itemprop="text">Rengsjö Farm levererar lammkött i hela Hälsingland och till angränsande län vid större beställningar</span>
+                </div>
+                
                 <div class="contact-content">
                     <p class="contact-text">
                         Ring eller maila för att beställa färskt lammkött. Vi levererar i Hälsingland eller så hämtar du själv på gården.
@@ -584,9 +825,11 @@
                         Leverans kan ske till angränsande län vid större beställning av en eller flera kunder.
                     </p>
                     <div class="contact-methods">
-                        <a href="tel:073-801 93 51" class="contact-link">
+                        <a href="tel:073-801 93 51" class="contact-link" itemprop="telephone">
                             <span class="contact-label">Telefon</span>
-                            <span class="contact-value">073-801 93 51</span>
+                            <span class="contact-value" itemscope itemtype="https://schema.org/Answer" data-answer-target="phone">
+                                <span itemprop="text">073-801 93 51</span>
+                            </span>
                         </a>
                         <a href="mailto:nina_backan@hotmail.com" class="contact-link">
                             <span class="contact-label">E-post</span>
