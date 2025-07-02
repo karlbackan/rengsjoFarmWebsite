@@ -1002,11 +1002,22 @@
         };
         
         const handleScrollAnimation = () => {
+            // Check if mobile
+            const isMobile = window.innerWidth <= 768;
+            
             scrollElements.forEach((el) => {
-                if (elementInView(el, 1.25)) {
-                    displayScrollElement(el);
-                } else if (elementOutofView(el)) {
-                    hideScrollElement(el)
+                // On mobile, reveal product cards immediately when they enter viewport
+                if (isMobile && el.classList.contains('product-card')) {
+                    if (elementInView(el, 1)) {
+                        displayScrollElement(el);
+                    }
+                } else {
+                    // Desktop behavior remains the same
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    } else if (elementOutofView(el)) {
+                        hideScrollElement(el)
+                    }
                 }
             })
         }
@@ -1014,6 +1025,9 @@
         window.addEventListener('scroll', () => { 
             handleScrollAnimation();
         });
+        
+        // Initial check on page load
+        handleScrollAnimation();
         
         // Active navigation highlight
         const sections = document.querySelectorAll('section[id]');

@@ -141,6 +141,13 @@
   opacity: 1;
 }
 
+/* On mobile, make product cards appear instantly */
+@media (max-width: 768px) {
+  .product-card.scroll-reveal {
+    transition: opacity 0.2s ease;
+  }
+}
+
 /* Button Interactions */
 .button-pulse {
   position: relative;
