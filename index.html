@@ -29,8 +29,8 @@
     <link rel="modulepreload" href="js/navigation.js">
     <title>Rengsjö Farm - Lammkött från Backans Gård | Östra Höle, Hälsingland</title>
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://rengsjöfarm.se/">
+    <!-- Canonical URL - Using punycode for technical consistency with sitemap -->
+    <link rel="canonical" href="https://xn--rengsjfarm-jcb.se/">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Rengsjö Farm - Lammkött från familjeägd gård i Hälsingland">
@@ -208,7 +208,6 @@
               "priceCurrency": "SEK",
               "availability": "https://schema.org/InStock",
               "price": "110",
-              "priceCurrency": "SEK",
               "unitCode": "KGM"
             }
           },
@@ -334,63 +333,6 @@
     }
     </script>
     
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Var ligger Rengsjö Farm?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vi finns på Östra Höle 9326, 821 98 Rengsjö i Hälsingland, mellan Bollnäs och Söderhamn. Gården har funnits i släkten i flera generationer."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hur beställer jag lammkött?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ring oss på 073-801 93 51 eller maila till nina_backan@hotmail.com. Vi tar emot beställningar alla dagar och levererar färskt lammkött efter överenskommelse."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "När slaktas lammen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Våra lamm slaktas i början av oktober när de betat naturligt hela sommaren. Detta ger köttet den bästa smaken och kvaliteten."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kan jag hämta direkt på gården?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, du kan hämta din beställning direkt på gården utan extra kostnad. Vi levererar också i Hälsingland och till angränsande län vid större beställningar."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hur är lammen uppfödda?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Våra lamm föds upp på naturliga betesmarker med fri rörlighet. De lever i flock och betar fritt på våra ängar. Vintertid har de rymliga stallar med lösdrift där djuren kan röra sig fritt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Vad kostar vakuumpackning?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vakuumpackning kostar 250 kr per helt lamm eller 11 kr/kg för färs. Detta är en tilläggstjänst för längre hållbarhet i frysen."
-          }
-        }
-      ]
-    }
-    </script>
     
     <!-- VideoObject Schema for farm videos -->
     <script type="application/ld+json">
@@ -400,7 +342,7 @@
       "name": "Får på naturliga betesmarker - Rengsjö Farm",
       "description": "Se hur våra får lever fritt på naturliga betesmarker i Hälsingland",
       "thumbnailUrl": "https://rengsjöfarm.se/images/fårbeteäter.jpeg",
-      "uploadDate": "2024-01-01",
+      "uploadDate": "2024-01-01T00:00:00+01:00",
       "contentUrl": "https://rengsjöfarm.se/videos/fårpåbete.mp4",
       "embedUrl": "https://rengsjöfarm.se/#gallery"
     }
@@ -443,92 +385,7 @@
     }
     </script>
     
-    <!-- HowTo Schema for Ordering Process -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "Hur du beställer lammkött från Rengsjö Farm",
-      "description": "Enkel guide för att beställa färskt lammkött direkt från gården",
-      "inLanguage": "sv",
-      "supply": {
-        "@type": "HowToSupply",
-        "name": "Kontaktuppgifter"
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Kontakta oss",
-          "text": "Ring 073-801 93 51 eller maila nina_backan@hotmail.com",
-          "url": "https://rengsjöfarm.se/#contact"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Välj produkter",
-          "text": "Välj mellan helt lamm ostyckat (110 kr/kg), styckat med ben (+250 kr) eller benfritt (+400 kr)"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Bestäm leverans",
-          "text": "Välj mellan att hämta på gården eller få leverans (vid större beställningar)"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Betala och hämta",
-          "text": "Betala kontant, med Swish eller banköverföring vid leverans"
-        }
-      ],
-      "totalTime": "PT15M"
-    }
-    </script>
     
-    <!-- Recipe Schema for Lamb Preparation -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Recipe",
-      "name": "Klassisk lammstek från Rengsjö Farm",
-      "description": "Traditionell tillagning av lammstek med lokala ingredienser",
-      "inLanguage": "sv",
-      "author": {"@id": "https://rengsjöfarm.se/#nina-backan"},
-      "datePublished": "2025-01-01",
-      "prepTime": "PT20M",
-      "cookTime": "PT90M",
-      "totalTime": "PT110M",
-      "recipeYield": "6 portioner",
-      "recipeCategory": "Huvudrätt",
-      "recipeCuisine": "Svensk",
-      "keywords": "lammstek, lammkött, hälsingland, lokalproducerat",
-      "recipeIngredient": [
-        "1,5 kg lammstek från Rengsjö Farm",
-        "3 vitlöksklyftor",
-        "Färsk rosmarin",
-        "Salt och peppar",
-        "2 msk olivolja"
-      ],
-      "recipeInstructions": [
-        {
-          "@type": "HowToStep",
-          "text": "Låt köttet komma till rumstemperatur"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Gnid in med vitlök, rosmarin, salt och peppar"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Stek i ugn på 175°C i cirka 90 minuter"
-        }
-      ],
-      "nutrition": {
-        "@type": "NutritionInformation",
-        "servingSize": "100g",
-        "calories": "250",
-        "proteinContent": "26g",
-        "fatContent": "16g"
-      }
-    }
-    </script>
     
     <!-- AggregateOffer Schema for Product Bundles -->
     <script type="application/ld+json">
