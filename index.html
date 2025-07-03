@@ -202,6 +202,7 @@
             "@type": "Product",
             "name": "Slaktat, ostyckat lamm",
             "description": "Helt lamm, ostyckat. Naturbeteskött.",
+            "image": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
@@ -215,6 +216,7 @@
             "@type": "Product",
             "name": "Traditionellt styckat lamm",
             "description": "Normalstyckat med val av hel rygg eller kotletter.",
+            "image": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
@@ -243,6 +245,7 @@
             "@type": "Product",
             "name": "Benfritt styckat lamm",
             "description": "Benfritt styckat för enkel tillagning.",
+            "image": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
@@ -271,6 +274,7 @@
             "@type": "Product",
             "name": "Lammfärs",
             "description": "Färsk lammfärs.",
+            "image": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
@@ -284,6 +288,7 @@
             "@type": "Product",
             "name": "Fårfärs",
             "description": "Färsk fårfärs.",
+            "image": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
             "category": "Fårkött",
             "offers": {
               "@type": "Offer",
@@ -334,17 +339,18 @@
     </script>
     
     
-    <!-- VideoObject Schema for farm videos -->
+    <!-- VideoObject Schema - Only marking up the primary video (fårpåbete.mp4) to avoid "multiple video URLs" error -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": "Får på naturliga betesmarker - Rengsjö Farm",
       "description": "Se hur våra får lever fritt på naturliga betesmarker i Hälsingland",
-      "thumbnailUrl": "https://rengsjöfarm.se/images/fårbeteäter.jpeg",
+      "thumbnailUrl": "https://xn--rengsjfarm-jcb.se/images/fårbeteäter.jpeg",
       "uploadDate": "2024-01-01T00:00:00+01:00",
-      "contentUrl": "https://rengsjöfarm.se/videos/fårpåbete.mp4",
-      "embedUrl": "https://rengsjöfarm.se/#gallery"
+      "duration": "PT30S",
+      "contentUrl": "https://xn--rengsjfarm-jcb.se/videos/fårpåbete.mp4",
+      "publisher": {"@id": "https://xn--rengsjfarm-jcb.se/#business"}
     }
     </script>
     
@@ -487,7 +493,7 @@
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
                         <video muted loop preload="metadata" playsinline webkit-playsinline loading="lazy">
-                            <source src="videos/fårpåbete.mp4#t=0.1" type="video/mp4">
+                            <source src="videos/fårpåbete.mp4" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -499,7 +505,7 @@
                     </figure>
                     <figure class="gallery-item hover-lift image-overlay video-item">
                         <video muted loop preload="metadata" playsinline webkit-playsinline loading="lazy">
-                            <source src="videos/lammSpringerRunt.mp4#t=0.1" type="video/mp4">
+                            <source src="videos/lammSpringerRunt.mp4" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -513,7 +519,7 @@
                     <!-- Hidden additional content -->
                     <figure class="gallery-item hover-lift image-overlay video-item gallery-hidden">
                         <video muted loop preload="metadata" playsinline webkit-playsinline loading="lazy">
-                            <source src="videos/nyföttlamm.mp4#t=0.1" type="video/mp4">
+                            <source src="videos/nyföttlamm.mp4" type="video/mp4">
                         </video>
                         <button class="video-play-btn" aria-label="Spela video">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
