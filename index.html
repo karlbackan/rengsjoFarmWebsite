@@ -251,14 +251,26 @@
             "category": "Lammkött",
             "offers": {
               "@type": "Offer",
-              "price": "350",
+              "price": "120",
               "priceCurrency": "SEK",
               "availability": "https://schema.org/InStock",
               "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "350",
-                "priceCurrency": "SEK",
-                "name": "Pris per lamm"
+                "@type": "CompoundPriceSpecification",
+                "priceComponent": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "120",
+                    "priceCurrency": "SEK",
+                    "unitCode": "KGM",
+                    "name": "Kilopris"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "350",
+                    "priceCurrency": "SEK",
+                    "name": "Styckningsavgift"
+                  }
+                ]
               }
             }
           },
@@ -648,7 +660,7 @@
                         <div class="product-details">
                         </div>
                         <div class="product-footer">
-                            <span class="price">350 kr per lamm</span>
+                            <span class="price">120 kr/kg + 350 kr</span>
                         </div>
                     </article>
                     
